@@ -1,0 +1,440 @@
+@import url(./componenetes/header.css);
+@import url(./componenetes/footer.css);
+@import url(./componenetes/curso-card.css);
+:root {
+  --color-principal: #2e4052;
+  --color-logos: #cad6e2;
+  --color-input: #507da1;
+  --color-secundario: #507da1;
+
+  --color-html: #e44d26;
+  --color-html-gradient: linear-gradient(to right, #e44d26 100%, #e44d26 0%);
+
+  --color-css: #0277bd;
+  --color-css-gradient: linear-gradient(to right, #0277bd 100%, #0277bd 0%);
+
+  --color-js: #efc725;
+  --color-js-gradient: linear-gradient(to right, #efc725 100%, #efc725 0%);
+
+  --color-csharp: #4d187d;
+  --color-csharp-gradient: linear-gradient(to right, #4d187d 100%, #4d187d 0%);
+
+  --color-java: #e01f22;
+  --color-java-gradient: linear-gradient(to right, #e01f22 100%, #e01f22 0%);
+
+  --color-python: #ffd651;
+  --color-python-gradient: linear-gradient(to right, #ffd651 100%, #ffd651 0%);
+
+  --color-react: #05a5d1;
+  --color-react-gradient: linear-gradient(to right, #05a5d1 100%, #05a5d1 0%);
+
+  --color-celeste: #5cddeb;
+  --color-celeste-gradient: linear-gradient(to right, #5cddeb 100%, #5cddeb 0%);
+
+  --bg-color-header-gradient: linear-gradient(to right, #517fa4 0%, #243949 100%);
+  --bg-color-curso-card-gradient: linear-gradient(180deg, #507da1 0%, #507da100 100%);
+  --bg-color-curso-card-datos-gradient: linear-gradient(180deg, #507da1 0%, #507da1e6 100%);
+
+  --animacion-rebote: cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  --duracion-animacion: 800ms;
+  --bg-color-boton-secundario: #2d3f5066;
+  --bg-color-boton-principal: #05a5d1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  color: #ffffff;
+  font-family: Inter;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.contenedor {
+  width: 100%;
+  height: auto;
+  display: flex;
+  /* justify-content: space-between; */
+  justify-content: center;
+  align-items: center;
+  /* gap: clamp(20px, calc(5vw + 20px), 100px); */
+  gap: clamp(5px, calc(1vw + 5px), 100px);
+}
+
+body {
+  background-color: var(--color-principal);
+}
+
+.pantalla_pago {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+}
+
+.pantalla_principal::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -100;
+
+  background-image: url(../assets/images/fondo_1.png);
+  background-repeat: no-repeat;
+  background-position: center 30%;
+  background-size: 50%;
+  background-attachment: fixed;
+
+  filter: blur(10px);
+  opacity: 0.4;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(20px, calc(5vw + 20px), 100px);
+  padding-inline: clamp(10px, calc(2vw + 10px), 50vw);
+}
+
+.seccion-formulario-pago {
+  gap: clamp(20px, calc(5vw + 20px), 100px);
+  flex-direction: column;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+.formulario_datos_tarjeta {
+  display: grid;
+  width: 100%;
+  max-width: 1300px;
+  max-height: 800px;
+  grid-template:
+    "datos-tarjeta tarjeta " 50px
+    "datos-tarjeta tarjeta " 50px
+    "datos-tarjeta tarjeta " 50px
+    "datos-tarjeta datos-contacto " 50px
+    "datos-tarjeta datos-contacto " 50px
+    "boton boton " 50px / 1fr 1fr;
+  gap: clamp(20px, calc(5vw + 10px), 100px);
+
+  padding-inline: 5vw;
+}
+
+.datos_tarjeta,
+.datos_adicionales {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.datos_tarjeta {
+  grid-area: datos-tarjeta;
+}
+.datos_adicionales {
+  grid-area: datos-contacto;
+}
+
+.tarjeta {
+  grid-area: tarjeta;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  background: #3054b1;
+  position: relative;
+}
+
+.form-input,
+.form-input-select {
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-input);
+  width: 100%;
+  height: 50px;
+  position: relative;
+  transition-property: box-shadow;
+  transition-duration: var(--duracion-animacion);
+  transition-timing-function: var(--animacion-rebote);
+}
+
+.form-input:focus-within {
+  box-shadow: 0 0 50px 20px #5cddeb4f;
+}
+
+.form-input label {
+  cursor: text;
+  font-size: 1.3rem;
+  padding-left: 20px;
+  position: absolute;
+  top: 10px;
+  transition-property: translate, font-size;
+  transition-duration: var(--duracion-animacion);
+}
+
+.form-input-select {
+  flex-direction: column;
+  transition-property: z-index, box-shadow;
+  transition-duration: var(--duracion-animacion);
+  transition-timing-function: var(--animacion-rebote);
+  z-index: 1;
+}
+
+.form-input-select:has(.mostrar-opciones) {
+  z-index: 100;
+  box-shadow: 0 0 50px 20px #5cddeb4f, 0 50px 50px 20px #5cddeb4f, 0 100px 50px 20px #5cddeb4f,
+    0 150px 50px 20px #5cddeb4f, 0 200px 50px 20px #5cddeb4f, 0 250px 50px 20px #5cddeb4f;
+}
+
+.form-input-select span {
+  font-size: 1.3rem;
+}
+
+.form-input:focus-within label,
+.form-input:has(input:valid) label {
+  color: #ffffffbd;
+  font-size: 1.2rem;
+  translate: -10px -25px;
+}
+
+.form-input input:invalid {
+  /* border: 2px solid red; */
+}
+
+.form-input input {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  font-size: 1.3rem;
+  padding-inline: 20px;
+}
+.form-input input,
+.form-input input:focus-within,
+.form-input textarea,
+.form-input textarea:focus-within {
+  outline: none;
+  border: none;
+}
+
+.logo_tarjeta {
+  background-image: url(../assets/images/logo_tarjeta.png);
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: 10% 10%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.nombre {
+  width: 232px;
+  height: 30px;
+  text-align: left;
+  font-size: 25px;
+  letter-spacing: 0;
+  position: absolute;
+  bottom: 100px;
+  left: 50px;
+}
+
+.numero {
+  width: 228px;
+  height: 30px;
+  text-align: left;
+  font-size: 25px;
+  letter-spacing: 0;
+  position: absolute;
+  bottom: 30px;
+  left: 50px;
+}
+
+.expiration_date {
+  width: 120px;
+  height: 30px;
+  text-align: left;
+  font-size: 25px;
+  letter-spacing: 0;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+
+.tarjeta__fecha-cvv {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.fecha_vencimiento {
+  background-color: #507da1cc;
+  width: 70%;
+}
+.cvv {
+  width: 30%;
+  text-transform: uppercase;
+}
+.calendario {
+  display: flex;
+  width: 340px;
+  height: 100%;
+  align-items: center;
+  align-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.celda-dia {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: #3f6380;
+  font-size: 1rem;
+  cursor: pointer;
+  transition-property: background-color, color;
+  transition-duration: 300ms;
+}
+
+.celda-dia:hover {
+  background-color: var(--color-celeste);
+  color: black;
+}
+
+.desplegable_select {
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  padding-inline: 20px;
+  justify-content: space-between;
+  background-color: var(--color-input);
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.contenedor-opciones {
+  background: var(--color-input);
+  max-height: 0;
+  opacity: 0;
+  transition-property: max-height, opacity, padding-block;
+  transition-duration: var(--duracion-animacion);
+  transition-timing-function: var(--animacion-rebote);
+  position: absolute;
+  top: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+  width: 100%;
+  padding-left: 50px;
+  padding-block: 0px;
+  transform-origin: top;
+  z-index: 10;
+}
+
+.contenedor--calendario {
+  display: grid;
+  place-items: center;
+  padding-inline-start: 0px;
+}
+
+.listado-opciones {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: 250px;
+  gap: 20px;
+  overflow-y: auto;
+}
+
+.opcion {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 1rem;
+}
+
+.opcion label {
+  cursor: pointer;
+}
+
+.opcion input {
+  width: 30px;
+  height: 30px;
+}
+
+.desplegable_select.mostrar-opciones ~ .contenedor-opciones {
+  opacity: 1;
+  max-height: 300px;
+  padding-bottom: 20px;
+  z-index: 100;
+}
+
+.btn_pricipal,
+.btn_pricipal:focus-within {
+  border: none;
+  outline: none;
+}
+
+.btn_pricipal {
+  color: #000000;
+  font-size: 1.8rem;
+  font-weight: 600;
+  box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.95);
+  width: 300px;
+  height: 50px;
+  border: 3px solid #5cddeb;
+  transition-property: color, font-size, border-color, background-color, box-shadow;
+  transition-duration: 500ms;
+
+  grid-area: boton;
+  justify-self: center;
+}
+
+.btn_pricipal:hover {
+  color: #ffffffff;
+  font-size: 2rem;
+  border-color: #fff;
+  background-color: #5cddebe6;
+  box-shadow: 0px 4px 20px 10px rgba(92, 221, 235, 0.6);
+}
+
+@media screen and (max-width: 800px) {
+  .formulario_datos_tarjeta {
+    grid-template:
+      "tarjeta" 50px
+      "tarjeta" 50px
+      "tarjeta" 50px
+      "datos-tarjeta" 50px
+      "datos-tarjeta" 50px
+      "datos-tarjeta" 50px
+      "datos-tarjeta" 50px
+      "datos-tarjeta" 50px
+      "datos-contacto" 50px
+      "datos-contacto" 50px
+      "boton" 50px / 1fr;
+  }
+}

@@ -1,0 +1,326 @@
+@import url(./componenetes/header.css);
+@import url(./componenetes/footer.css);
+@import url(./componenetes/curso-card.css);
+:root {
+  --color-principal: #2e4052;
+  --color-logos: #cad6e2;
+  --color-input: #507da1;
+  --color-secundario: #507da1;
+
+  --color-html: 228, 77, 38;
+  --color-html-gradient: linear-gradient(rgba(var(--color-html), 1), rgba(var(--color-html), 0));
+
+  --color-css: 2, 119, 189;
+
+  --color-javascript: 239, 199, 37;
+
+  --color-csharp: 77, 24, 125;
+
+  --color-java: 224, 31, 34;
+
+  --color-python: 255, 214, 81;
+
+  --color-react: 5, 165, 209;
+
+  --color-celeste: #5cddeb;
+  --color-celeste-gradient: linear-gradient(to right, #5cddeb 100%, #5cddeb00 0%);
+
+  --bg-color-header-gradient: linear-gradient(to right, #517fa4 0%, #243949 100%);
+  --bg-color-curso-card-gradient: linear-gradient(180deg, #507da1 0%, #507da100 100%);
+  --bg-color-curso-card-datos-gradient: linear-gradient(180deg, #507da1 0%, #507da1e6 100%);
+
+  --animacion-rebote: cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  --duracion-animacion: 800ms;
+
+  --bg-color-boton-secundario: #2d3f5066;
+  --bg-color-boton-principal: #05a5d1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  color: #ffffff;
+  font-family: Inter;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.contenedor {
+  width: 100%;
+  height: auto;
+  display: flex;
+  /* justify-content: space-between; */
+  justify-content: center;
+  align-items: center;
+  /* gap: clamp(20px, calc(5vw + 20px), 100px); */
+  gap: clamp(5px, calc(1vw + 5px), 100px);
+}
+
+body {
+  background-color: var(--color-principal);
+}
+
+.pantalla_curso {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+}
+
+.pantalla_curso::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -100;
+
+  background-image: url(../assets/images/fondo_1.png);
+  background-repeat: no-repeat;
+  background-position: center 30%;
+  background-size: 50%;
+  background-attachment: fixed;
+
+  filter: blur(10px);
+  opacity: 0.4;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(20px, calc(5vw + 20px), 100px);
+  padding-inline: clamp(10px, calc(2vw + 10px), 50vw);
+}
+
+.seccion_descripcion {
+}
+
+.imagen_curso {
+  width: 500px;
+  aspect-ratio: 1;
+  background-image: url(../assets/images/cursos/react.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.contenedor__descripcion {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+.nombre_curso {
+  text-align: center;
+  font-family: Inter;
+  /* font-size: 40px; */
+  font-size: clamp(2rem, calc(1vw + 1.5rem), 5rem);
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+.descripcion {
+  text-align: center;
+  font-family: Inter;
+  font-size: clamp(1rem, calc(0.5vw + 1rem), 5rem);
+  line-height: 1.6;
+}
+
+.seccion_modulos {
+  flex-direction: column;
+}
+
+.titulo {
+  font-size: 40px;
+  letter-spacing: 0;
+  text-transform: capitalize;
+}
+
+.listado_modulos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+}
+
+.contenedor-modulo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.modulo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.modulo__descripcion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.modulo__numero {
+}
+
+.modulo__nombre {
+  font-size: 1.3rem;
+}
+
+.modulo__datos {
+  display: flex;
+  padding-left: 10%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  max-height: 0;
+  opacity: 0;
+  transition-property: max-height, opacity, padding-block;
+  transition-duration: var(--duracion-animacion);
+  transition-timing-function: var(--animacion-rebote);
+  overflow: hidden;
+  top: 100%;
+  flex-shrink: 0;
+  width: 100%;
+  transform-origin: top;
+  z-index: 10;
+}
+
+.modulo__clases {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.modulo__atributos {
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.atributo {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.flex-start {
+  align-items: flex-start;
+}
+
+.atributo__nombre {
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.atributo__valor {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.atributos__basicos {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.desplegable__clases {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.listado__clases {
+  width: 100%;
+  display: flex;
+  padding-inline: 10%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  max-height: 0;
+  opacity: 0;
+  transition-property: max-height, opacity;
+  transition-duration: var(--duracion-animacion);
+  transition-timing-function: var(--animacion-rebote);
+  /* position: absolute; */
+  overflow: hidden;
+  top: 100%;
+  flex-shrink: 0;
+  transform-origin: top;
+  z-index: 10;
+}
+
+.desplegable__clases.mostrar-clases ~ .listado__clases,
+.modulo.mostrar-datos ~ .modulo__datos {
+  opacity: 1;
+  max-height: 1000px;
+  z-index: 100;
+}
+
+.clase {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 1.3rem;
+}
+
+.clase_descripcion,
+.clase_duracion {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+}
+
+.clase__nombre {
+}
+
+.arrow {
+}

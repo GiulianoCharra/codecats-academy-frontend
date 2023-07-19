@@ -1,0 +1,383 @@
+@import url(./componenetes/header.css);
+@import url(./componenetes/footer.css);
+@import url(./componenetes/curso-card.css);
+:root {
+  --color-principal: #2e4052;
+  --color-logos: #cad6e2;
+  --color-input: #507da1;
+  --color-secundario: #507da1;
+
+  --color-html: 228, 77, 38;
+  --color-html-gradient: linear-gradient(rgba(var(--color-html), 1), rgba(var(--color-html), 0));
+
+  --color-css: 2, 119, 189;
+
+  --color-javascript: 239, 199, 37;
+
+  --color-csharp: 77, 24, 125;
+
+  --color-java: 224, 31, 34;
+
+  --color-python: 255, 214, 81;
+
+  --color-react: 5, 165, 209;
+
+  --color-celeste: #5cddeb;
+  --color-celeste-gradient: linear-gradient(to right, #5cddeb 100%, #5cddeb00 0%);
+
+  --bg-color-header-gradient: linear-gradient(to right, #517fa4 0%, #243949 100%);
+  --bg-color-curso-card-gradient: linear-gradient(180deg, #507da1 0%, #507da100 100%);
+  --bg-color-curso-card-datos-gradient: linear-gradient(180deg, #507da1 0%, #507da1e6 100%);
+
+  --animacion-rebote: cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  --duracion-animacion: 800ms;
+
+  --bg-color-boton-secundario: #2d3f5066;
+  --bg-color-boton-principal: #05a5d1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  color: #ffffff;
+  font-family: Inter;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.contenedor {
+  width: 100%;
+  height: auto;
+  display: flex;
+  /* justify-content: space-between; */
+  justify-content: center;
+  align-items: center;
+  /* gap: clamp(20px, calc(5vw + 20px), 100px); */
+  gap: clamp(5px, calc(1vw + 5px), 100px);
+}
+
+body {
+  background-color: var(--color-principal);
+}
+
+.pantalla_cursos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+}
+
+.pantalla_cursos::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -100;
+
+  background-image: url(../assets/images/fondo_1.png);
+  background-repeat: no-repeat;
+  background-position: center 30%;
+  background-size: 50%;
+  background-attachment: fixed;
+
+  filter: blur(10px);
+  opacity: 0.4;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(20px, calc(5vw + 20px), 100px);
+  padding-inline: clamp(10px, calc(2vw + 10px), 50vw);
+}
+
+.cursos_recomendados {
+  flex-direction: column;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.titulo {
+  font-size: 40px;
+  letter-spacing: 0;
+}
+
+.contenedor-listado {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.listado_cursos_recomendados {
+  display: flex;
+  padding: 10px 40px;
+  padding-right: 500px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  overflow-x: auto;
+}
+
+.html {
+  background-image: linear-gradient(rgba(var(--color-html), 1), rgba(var(--color-html), 0));
+}
+.html .curso_datos {
+  background-image: linear-gradient(rgba(var(--color-html), 1), rgba(var(--color-html), 0.9));
+}
+.html .btn_add_to_cart {
+  /* background-color: rgba(var(--color-html), 0.4); */
+}
+.html .btn_comprar {
+  background-color: rgba(var(--color-html), 0.8);
+}
+
+.javascript {
+  background-image: linear-gradient(
+    rgba(var(--color-javascript), 1),
+    rgba(var(--color-javascript), 0)
+  );
+}
+.javascript .curso_datos {
+  background-image: linear-gradient(
+    rgba(var(--color-javascript), 1),
+    rgba(var(--color-javascript), 0.9)
+  );
+}
+.javascript .btn_add_to_cart {
+  /* background-color: rgba(var(--color-javascript), 0.4); */
+}
+.javascript .btn_comprar {
+  background-color: rgba(var(--color-javascript), 8);
+}
+
+.css {
+  background-image: linear-gradient(rgba(var(--color-css), 1), rgba(var(--color-css), 0));
+}
+.css .curso_datos {
+  background-image: linear-gradient(rgba(var(--color-css), 1), rgba(var(--color-css), 0.9));
+}
+.css .btn_add_to_cart {
+  /* background-color: rgba(var(--color-css), 0.4); */
+}
+.css .btn_comprar {
+  background-color: rgba(var(--color-css), 0.8);
+}
+
+.csharp {
+  background-image: linear-gradient(rgba(var(--color-csharp), 1), rgba(var(--color-csharp), 0));
+}
+.csharp .curso_datos {
+  background-image: linear-gradient(rgba(var(--color-csharp), 1), rgba(var(--color-csharp), 0.9));
+}
+.csharp .btn_add_to_cart {
+  /* background-color: rgba(var(--color-csharp), 0.4); */
+}
+.csharp .btn_comprar {
+  background-color: rgba(var(--color-csharp), 0.8);
+}
+
+.python {
+  background-image: linear-gradient(rgba(var(--color-python), 1), rgba(var(--color-python), 0));
+}
+.python .curso_datos {
+  background-image: linear-gradient(rgba(var(--color-python), 1), rgba(var(--color-python), 0.9));
+}
+.python .btn_add_to_cart {
+  /* background-color: rgba(var(--color-python), 0.4); */
+}
+.python .btn_comprar {
+  background-color: rgba(var(--color-python), 0.8);
+}
+
+.java {
+  background-image: linear-gradient(rgba(var(--color-java), 1), rgba(var(--color-java), 0));
+}
+.java .curso_datos {
+  background-image: linear-gradient(rgba(var(--color-java), 1), rgba(var(--color-java), 0.9));
+}
+.java .btn_add_to_cart {
+  /* background-color: rgba(var(--color-java), 0.4); */
+}
+.java .btn_comprar {
+  background-color: rgba(var(--color-java), 0.8);
+}
+
+.seccion_filtros {
+  flex-direction: column;
+}
+
+.buscador-curso {
+  display: flex;
+  width: 80%;
+  height: 50px;
+  padding: 5px 20px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-input);
+  transition-property: box-shadow;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+}
+
+.buscador-curso:focus-within {
+  box-shadow: 0 0 50px 20px #5cddeb4f;
+}
+
+.filtros {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.filtro {
+  height: 50px;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-transform: capitalize;
+  position: relative;
+
+  transition-property: z-index, box-shadow;
+  transition-duration: var(--duracion-animacion);
+  transition-timing-function: var(--animacion-rebote);
+  z-index: 1;
+}
+
+.desplegable_check {
+  font-size: 1.4rem;
+  height: 50px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color-input);
+  cursor: pointer;
+}
+
+.filtro:has(.mostrar-opciones) {
+  z-index: 100;
+  box-shadow: 0 0 50px 20px #5cddeb4f,
+   0 50px 50px 20px #5cddeb4f,
+    0 100px 50px 20px #5cddeb4f,
+    0 150px 50px 20px #5cddeb4f,
+     0 200px 50px 20px #5cddeb4f,
+     0 250px 50px 20px #5cddeb4f,
+      0 300px 50px 20px #5cddeb4f;
+}
+
+.contenedor-opciones {
+  background: var(--color-input);
+  max-height: 0;
+  opacity: 0;
+  transition-property: max-height, opacity;
+  transition-duration: var(--duracion-animacion);
+  transition-timing-function: var(--animacion-rebote);
+  position: absolute;
+  overflow: hidden;
+  top: 100%;
+  flex-shrink: 0;
+  width: 100%;
+  padding-left: 50px;
+  padding-block: 20px;
+  transform-origin: top;
+}
+
+.listado-opciones {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: 250px;
+  gap: 20px;
+  overflow-y: auto;
+}
+
+.opcion {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 1rem;
+}
+
+.opcion label {
+  cursor: pointer;
+}
+
+.opcion input {
+  width: 30px;
+  height: 30px;
+}
+
+.desplegable_check.mostrar-opciones ~ .contenedor-opciones {
+  z-index: 100;
+  opacity: 1;
+  max-height: 300px;
+}
+
+.seccion_cursos {
+  overflow: hidden;
+}
+
+.listado_cursos {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 950px) {
+  .buscador-escritorio {
+    display: none;
+  }
+
+  .contenedor-buscador-movil {
+    display: flex;
+    visibility: visible;
+    width: 100%;
+    opacity: 1;
+  }
+
+  .equipo__descripciones {
+    flex-direction: column;
+  }
+
+  .equipo {
+    height: auto;
+    flex-direction: row;
+  }
+
+  .equipo:nth-of-type(even) {
+    flex-direction: row-reverse;
+  }
+
+  .equipo__introduccion {
+    flex-direction: column;
+  }
+
+  .seccion-equipo .equipo__introduccion .descripcion {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .curso {
+    flex-direction: column;
+  }
+}
