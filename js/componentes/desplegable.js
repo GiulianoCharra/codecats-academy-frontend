@@ -1,6 +1,5 @@
 document.addEventListener("click", function (event) {
   let desplegable_actual = event.target;
-  console.log(desplegable_actual);
   if (!desplegable_actual.classList.contains("desplegable_select")) {
     desplegable_actual = desplegable_actual.closest(".desplegable_select");
   }
