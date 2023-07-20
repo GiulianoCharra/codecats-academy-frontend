@@ -44,7 +44,6 @@
   --bg-color-boton-principal: #05a5d1;
 }
 
-
 .seccion-inicio {
   /* height: 400px; */
 }
@@ -213,6 +212,7 @@
   align-items: center;
   overflow-x: auto;
   padding-bottom: 20px;
+  transition: transform 0.3s ease-in-out;
 }
 
 .integrante {
