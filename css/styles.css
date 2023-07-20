@@ -1,6 +1,8 @@
+@import url(./componenetes/cuerpo-pagina.css);
 @import url(./componenetes/header.css);
 @import url(./componenetes/footer.css);
 @import url(./componenetes/curso-card.css);
+
 :root {
   --color-principal: #2e4052;
   --color-logos: #cad6e2;
@@ -42,71 +44,6 @@
   --bg-color-boton-principal: #05a5d1;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  color: #ffffff;
-  font-family: Inter;
-  scroll-behavior: smooth;
-}
-
-a {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.conteneder {
-  width: 100%;
-  height: auto;
-  display: flex;
-  /* justify-content: space-between; */
-  justify-content: center;
-  align-items: center;
-  /* gap: clamp(20px, calc(5vw + 20px), 100px); */
-  gap: clamp(5px, calc(1vw + 5px), 100px);
-}
-
-body {
-  background-color: var(--color-principal);
-}
-
-.pantalla_principal {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  position: relative;
-}
-
-.pantalla_principal::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: -100;
-
-  background-image: url(../assets/images/fondo_1.png);
-  background-repeat: no-repeat;
-  background-position: center 30%;
-  background-size: 50%;
-  background-attachment: fixed;
-
-  filter: blur(10px);
-  opacity: 0.4;
-}
-
-.main {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: clamp(20px, calc(5vw + 20px), 100px);
-  padding-inline: clamp(10px, calc(2vw + 10px), 50vw);
-}
 
 .seccion-inicio {
   /* height: 400px; */
@@ -222,7 +159,7 @@ body {
 
 .equipo {
   display: flex;
-  height: 500px;
+  /* height: 500px; */
   width: 100%;
   gap: 20px;
   flex-direction: column;
@@ -462,87 +399,6 @@ body {
   line-height: 1.6;
 }
 
-.footer {
-  display: flex;
-  width: 100%;
-  padding: 50px 30px;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.footer_primera_seccion {
-  width: 100%;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: clamp(20px, calc(1vw + 5px), 60px);
-  font-size: 1.5rem;
-}
-
-.footer_primera_seccion a {
-  text-transform: capitalize;
-}
-
-.footer_segunda_seccion {
-  width: 100%;
-  height: 50px;
-  display: flex;
-  gap: 50px;
-  align-items: center;
-}
-
-.line {
-  background-color: var(--color-logos);
-  width: 100%;
-  height: 3px;
-}
-
-.line--vertical {
-  width: 3px;
-  height: 100%;
-}
-
-.contato {
-  display: flex;
-  gap: 30px;
-}
-
-.contato svg {
-  fill: white;
-  font-size: 30px;
-}
-
-.linkedin {
-}
-.github {
-}
-
-.google {
-}
-
-.footer_tercera_seccion {
-  display: flex;
-  height: 156px;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-.copyright {
-  color: var(--color-logos);
-}
-
-.informacion_legal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  color: #ffffff;
-}
-
 @media screen and (max-width: 950px) {
   .buscador-escritorio {
     display: none;
@@ -574,11 +430,5 @@ body {
 
   .seccion-equipo .equipo__introduccion .descripcion {
     text-align: center;
-  }
-}
-
-@media screen and (max-width: 780px) {
-  .curso {
-    flex-direction: column;
   }
 }

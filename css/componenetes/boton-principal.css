@@ -1,0 +1,29 @@
+
+.btn_pricipal,
+.btn_pricipal:focus-within {
+  border: none;
+  outline: none;
+}
+
+.btn_pricipal {
+  color: #000000;
+  font-size: 1.8rem;
+  font-weight: 600;
+  box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.95);
+  width: 300px;
+  height: 50px;
+  border: 3px solid #5cddeb;
+  transition-property: color, font-size, border-color, background-color, box-shadow;
+  transition-duration: 500ms;
+
+  justify-self: center;
+}
+
+.btn_pricipal:hover {
+  color: #ffffffff;
+  font-size: 2rem;
+  border-color: #fff;
+  background-color: #5cddebe6;
+  box-shadow: 0px 4px 20px 10px rgba(92, 221, 235, 0.6);
+}

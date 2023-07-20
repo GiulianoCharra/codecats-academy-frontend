@@ -172,3 +172,17 @@ svg {
   font-size: 2rem;
   width: 40px;
 }
+
+
+@media screen and (max-width: 950px) {
+  .buscador-escritorio {
+    display: none;
+  }
+
+  .contenedor-buscador-movil {
+    display: flex;
+    visibility: visible;
+    width: 100%;
+    opacity: 1;
+  }
+}

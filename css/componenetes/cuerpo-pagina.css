@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  color: #ffffff;
+  font-family: Inter;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.contenedor {
+  width: 100%;
+  height: auto;
+  display: flex;
+  /* justify-content: space-between; */
+  justify-content: center;
+  align-items: center;
+  /* gap: clamp(20px, calc(5vw + 20px), 100px); */
+  gap: clamp(5px, calc(1vw + 5px), 100px);
+}
+
+.pantalla {
+  background-color: var(--color-principal);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+}
+
+.pantalla::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -100;
+
+  background-image: url(../../assets/images/fondo_1.png);
+  background-repeat: no-repeat;
+  background-position: center 30%;
+  background-size: 50%;
+  background-attachment: fixed;
+
+  filter: blur(10px);
+  opacity: 0.4;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(20px, calc(5vw + 20px), 100px);
+  padding-inline: clamp(10px, calc(2vw + 10px), 50vw);
+}
