@@ -197,9 +197,22 @@
 }
 
 @media screen and (max-width: 750px) {
-  .listado_cursos .curso {
-    flex-direction: column;
+
+  .listado_cursos {
+    justify-content: flex-start;
   }
+  
+  .listado_cursos .curso {
+    /* flex-direction: column; */
+    align-content: flex-start;
+
+    /* width: 30%; */
+  }
+  .listado_cursos .curso .curso_datos{
+    /* width: 70%; */
+  }
+
+
 
   .form-input-select {
     width: 100%;

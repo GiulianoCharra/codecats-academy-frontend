@@ -128,3 +128,9 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Personalizados 
+/assets/images_c
+/assets/images_cr
+/assets/images_crc
+/assets/images_originales

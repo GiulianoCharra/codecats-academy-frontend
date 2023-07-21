@@ -57,6 +57,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: clamp(20px, calc(5vw + 20px), 100px);
   padding-inline: clamp(10px, calc(2vw + 10px), 50vw);
 }
