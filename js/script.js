@@ -23,6 +23,8 @@ setInterval(autoScroll, 5000); */
 // Función para detectar la tarjeta en el centro y aplicar la clase del hover
 function detectarCentro() {
   // Obtener el ancho del contenedor y la posición del scroll horizontal
+  let centroPantalla = window.innerWidth
+  console.log(centroPantalla);
   const contenedorAncho = listadoIntegrantes.clientWidth;
   const scrollPosicion = listadoIntegrantes.scrollLeft;
 
