@@ -15,28 +15,18 @@ const listadoIntegrantes = document.querySelector(".listado_integrantes");
 
 // Función para desplazar automáticamente el carrusel
 
-/* function autoScroll() {
-  listadoIntegrantes.scrollBy({ left: 300, behavior: "smooth" });
-}
-setInterval(autoScroll, 5000); */
-
 // Función para detectar la tarjeta en el centro y aplicar la clase del hover
-function detectarCentro() {
+/* function detectarCentro() {
   // Obtener el ancho del contenedor y la posición del scroll horizontal
-  let centroPantalla = window.innerWidth
-  console.log(centroPantalla);
   const contenedorAncho = listadoIntegrantes.clientWidth;
   const scrollPosicion = listadoIntegrantes.scrollLeft;
 
   // Obtener las tarjetas y su ancho total
   const tarjetas = listadoIntegrantes.querySelectorAll(".integrante");
-  const tarjetasAnchoTotal = Array.from(tarjetas).reduce(
-    (total, tarjeta) => total + tarjeta.clientWidth,
-    0
-  );
 
   // Calcular la posición del centro en el carrusel
   const centroPosicion = scrollPosicion + contenedorAncho / 2;
+  console.log(centroPosicion);
 
   // Encontrar la tarjeta que está en el centro
   let tarjetaCentro = null;
@@ -65,3 +55,41 @@ listadoIntegrantes.addEventListener("scroll", detectarCentro);
 
 // Detectar el centro al cargar la página
 detectarCentro();
+ */
+
+let centroPantalla = calcularCentroPantalla();
+function autoScroll() {
+  listadoIntegrantes.scrollBy({ left: 300, behavior: "smooth" });
+  let cards = Array.from(document.getElementsByClassName("integrante"));
+  cards.forEach((card) => {
+    verificarCardCentro(card);
+  });
+  console.log("");
+}
+setInterval(autoScroll, 5000);
+
+function calcularCentroPantalla() {
+  return window.innerWidth / 2;
+}
+
+window.addEventListener("resize", () => {
+  let centroPantalla = calcularCentroPantalla();
+  console.log(centroPantalla);
+});
+
+function verificarCardCentro(card) {
+  document.getElementsByClassName("card");
+  let cardOffsetLeft = card.offsetLeft;
+  let cardWidth = card.clientWidth / 2;
+  let leftLimit = centroPantalla - cardWidth;
+  let righLimit = centroPantalla + cardWidth;
+
+  if ((cardOffsetLeft > leftLimit) & (cardOffsetLeft < righLimit)) {
+    card.classList.add("hover-activo");
+  } else {
+    card.classList.remove("hover-activo");
+  }
+  console.log(card);
+
+  console.log(cardOffsetLeft, cardWidth, centroPantalla, leftLimit, righLimit);
+}
