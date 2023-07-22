@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -12,7 +13,7 @@
     <title>CodeCats Academy</title>
     <link
       rel="shortcut icon"
-      href="assets/ico/logo.ico"
+      href="../assets/ico/logo.ico"
       type="image/x-icon"
     />
     <meta
@@ -33,21 +34,25 @@
     />
     <link
       rel="stylesheet"
-      href="../css/pago.css"
+      href="../css/contacto.css"
     />
     <script
       defer
-      src="../js/pago.js"
+      type="module"
+      src="../js/contacto.js"
     ></script>
     <script
       defer
+      type="module"
       src="../js/componentes/buscador.js"
     ></script>
     <script
       defer
+      type="module"
       src="../js/componentes/desplegable.js"
     ></script>
   </head>
+
   <body class="pantalla">
     <header class="header">
       <a
@@ -168,16 +173,26 @@
         </a>
       </nav>
     </header>
-    <div class="main">
-      <section class="seccion-formulario-pago contenedor">
-        <h1 class="titulo">credit card information</h1>
+    <main class="main">
+      <div class="seccion-contacto contenedor">
+        <h1 class="contact_form">Contact Form</h1>
         <form
-          class="formulario_datos_tarjeta"
-          autocomplete="off"
+          action=""
+          method="post"
+          class="formulario_contacto"
         >
-          <div class="datos_tarjeta">
+          <div class="form-inputs">
             <div class="form-input">
-              <label for="name">name</label>
+              <label for="surname">Surname</label>
+              <input
+                type="text"
+                name=""
+                id="surname"
+                required
+              />
+            </div>
+            <div class="form-input">
+              <label for="name">Name</label>
               <input
                 type="text"
                 name="name"
@@ -186,90 +201,174 @@
               />
             </div>
             <div class="form-input">
-              <label for="number">number</label>
+              <label for="email">Email</label>
               <input
-                type="number"
-                name="number"
-                id="number"
-                pattern="(\d{4}[-. ]?){4}|\d{4}[-. ]?\d{6}[-. ]?\d{5}"
+                type="text"
+                name=""
+                id="email"
                 required
               />
             </div>
-            <div class="tarjeta__fecha-cvv">
-              <div class="form-input-select fecha_vencimiento">
-                <div class="desplegable_select">
-                  <label for="fecha-expiracion">Expirate date</label>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="1em"
-                    viewBox="0 0 448 512"
-                  >
-                    <path
-                      d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zm64 80v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16zm128 0v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H208c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H336zM64 400v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H208zm112 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H336c-8.8 0-16 7.2-16 16z"
-                    />
-                  </svg>
-                </div>
-                <div class="contenedor-opciones contenedor--calendario">
-                  <div class="calendario">
-                    <div class="celda-dia">L</div>
-                    <div class="celda-dia">M</div>
-                    <div class="celda-dia">M</div>
-                    <div class="celda-dia">J</div>
-                    <div class="celda-dia">V</div>
-                    <div class="celda-dia">S</div>
-                    <div class="celda-dia">D</div>
-                    <div class="celda-dia">1</div>
-                    <div class="celda-dia">2</div>
-                    <div class="celda-dia">3</div>
-                    <div class="celda-dia">4</div>
-                    <div class="celda-dia">5</div>
-                    <div class="celda-dia">6</div>
-                    <div class="celda-dia">7</div>
-                    <div class="celda-dia">8</div>
-                    <div class="celda-dia">9</div>
-                    <div class="celda-dia">10</div>
-                    <div class="celda-dia">11</div>
-                    <div class="celda-dia">12</div>
-                    <div class="celda-dia">13</div>
-                    <div class="celda-dia">14</div>
-                    <div class="celda-dia">15</div>
-                    <div class="celda-dia">16</div>
-                    <div class="celda-dia">17</div>
-                    <div class="celda-dia">18</div>
-                    <div class="celda-dia">19</div>
-                    <div class="celda-dia">20</div>
-                    <div class="celda-dia">21</div>
-                    <div class="celda-dia">22</div>
-                    <div class="celda-dia">23</div>
-                    <div class="celda-dia">24</div>
-                    <div class="celda-dia">25</div>
-                    <div class="celda-dia">26</div>
-                    <div class="celda-dia">27</div>
-                    <div class="celda-dia">28</div>
-                    <div class="celda-dia">29</div>
-                    <div class="celda-dia">30</div>
-                    <div class="celda-dia">31</div>
+            <div class="form-input">
+              <label for="telephone">telephone</label>
+              <input
+                type="text"
+                name="telephone"
+                id="telephone"
+                required
+              />
+            </div>
+            <div class="form-input-select">
+              <div class="desplegable_select">
+                <span class="input-nombre">Country</span>
+                <svg
+                  class="flecha"
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="1em"
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
+                  />
+                </svg>
+              </div>
+              <div class="contenedor-opciones">
+                <div class="listado-opciones">
+                  <div class="opcion">
+                    <input
+                      type="radio"
+                      name="country"
+                      id="country-option-1"
+                    /><label
+                      for="country-option-1"
+                      class=""
+                      >Option 1</label
+                    >
+                  </div>
+                  <div class="opcion">
+                    <input
+                      type="radio"
+                      name="country"
+                      id="country-option-2"
+                    /><label
+                      for="country-option-2"
+                      class=""
+                      >Option 2</label
+                    >
+                  </div>
+                  <div class="opcion">
+                    <input
+                      type="radio"
+                      name="country"
+                      id="country-option-3"
+                    /><label
+                      for="country-option-3"
+                      class=""
+                      >Option 3</label
+                    >
+                  </div>
+                  <div class="opcion">
+                    <input
+                      type="radio"
+                      name="country"
+                      id="country-option-4"
+                    /><label
+                      for="country-option-4"
+                      class=""
+                      >Option 4</label
+                    >
+                  </div>
+                  <div class="opcion">
+                    <input
+                      type="radio"
+                      name="country"
+                      id="country-option-5"
+                    /><label
+                      for="country-option-5"
+                      class=""
+                      >Option 5</label
+                    >
                   </div>
                 </div>
-              </div>
-              <div class="form-input cvv">
-                <label for="cvv">cvv</label>
-                <input
-                  type="text"
-                  name="cvv"
-                  id="cvv"
-                  maxlength="3"
-                  required
-                />
               </div>
             </div>
             <div class="form-input-select">
               <div class="desplegable_select">
-                <label
-                  for="document-type"
-                  class="input-nombre"
-                  >Document Type</label
+                <span class="input-nombre">city</span>
+                <svg
+                  class="flecha"
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="1em"
+                  viewBox="0 0 512 512"
                 >
+                  <path
+                    d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
+                  />
+                </svg>
+              </div>
+              <div class="contenedor-opciones">
+                <div class="listado-opciones">
+                  <div class="opcion">
+                    <input
+                      type="radio"
+                      name="city"
+                      id="city-option-1"
+                    /><label
+                      for="city-option-1"
+                      class=""
+                      >Option 1</label
+                    >
+                  </div>
+                  <div class="opcion">
+                    <input
+                      type="radio"
+                      name="city"
+                      id="city-option-2"
+                    /><label
+                      for="city-option-2"
+                      class=""
+                      >Option 2</label
+                    >
+                  </div>
+                  <div class="opcion">
+                    <input
+                      type="radio"
+                      name="city"
+                      id="city-option-3"
+                    /><label
+                      for="city-option-3"
+                      class=""
+                      >Option 3</label
+                    >
+                  </div>
+                  <div class="opcion">
+                    <input
+                      type="radio"
+                      name="city"
+                      id="city-option-4"
+                    /><label
+                      for="city-option-4"
+                      class=""
+                      >Option 4</label
+                    >
+                  </div>
+                  <div class="opcion">
+                    <input
+                      type="radio"
+                      name="city"
+                      id="city-option-5"
+                    /><label
+                      for="city-option-5"
+                      class=""
+                      >Option 5</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-input-select">
+              <div class="desplegable_select">
+                <span class="input-nombre">reason</span>
                 <svg
                   class="flecha"
                   xmlns="http://www.w3.org/2000/svg"
@@ -341,55 +440,29 @@
                 </div>
               </div>
             </div>
-            <div class="form-input">
-              <label for="dni">dni</label>
-              <input
-                type="number"
-                name="dni"
-                id="dni"
+            <div class="form-input message">
+              <label for="message">message</label>
+              <textarea
+                name="message"
+                id="message"
+                cols="30"
+                rows="10"
                 required
-              />
+              ></textarea>
             </div>
           </div>
-          <div class="tarjeta">
-            <span class="nombre">name</span>
-            <span class="numero">1111-1111-1111-1111</span>
-            <span class="expiration_date">01/1991</span>
-            <div class="logo_tarjeta"></div>
-          </div>
-          <div class="datos_adicionales">
-            <div class="form-input">
-              <label for="email">Email</label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                required
-              />
-            </div>
-            <div class="form-input">
-              <label for="telephone">telephone</label>
-              <input
-                type="tel"
-                name="telephone"
-                id="telephone"
-                required
-              />
-            </div>
-          </div>
-
           <button
             type="submit"
             class="btn_pricipal"
           >
-            Pay
+            Submit
           </button>
         </form>
-      </section>
-    </div>
+      </div>
+    </main>
     <footer class="footer">
       <div class="footer_primera_seccion">
-        <a href="contacto.html">Contact</a>
+        <a href="#">Contact</a>
         <a href="cursos.html">courses</a>
         <a href="">frequent questions</a>
         <a href="">help</a>
