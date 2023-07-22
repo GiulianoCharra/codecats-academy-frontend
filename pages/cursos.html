@@ -1,0 +1,2560 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>CodeCats Academy</title>
+    <link
+      rel="shortcut icon"
+      href="/codecats-academy/assets/logo-5b43a274.ico"
+      type="image/x-icon"
+    />
+    <meta
+      name="description"
+      content="Pagina de cursos virtuales orientados al mundo del software, con una temática gatesca"
+    />
+    <meta
+      name="author"
+      content="Giuliano Charra"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Caveat&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+    
+    
+    
+    <script type="module" crossorigin src="/codecats-academy/assets/buscador-a79ccb57.js"></script>
+    <script type="module" crossorigin src="/codecats-academy/assets/desplegable-d9fce096.js"></script>
+    <link rel="stylesheet" href="/codecats-academy/assets/cursos-7e649972.css">
+  </head>
+  <body class="pantalla">
+    <header class="header">
+      <a
+        href="../index.html"
+        class="contenedor-logo"
+      >
+        <span class="codecats_academy">CodeCats Academy</span>
+        <img
+          class="logo"
+          src="/codecats-academy/assets/logo-027d1669.png"
+          alt=""
+        />
+      </a>
+
+      <div class="buscador buscador-escritorio">
+        <input
+          class="buscador-input"
+          type="text"
+          name=""
+          id=""
+          placeholder="Find the course or skill you want to learn"
+        />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="1em"
+          viewBox="0 0 512 512"
+        >
+          <path
+            d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
+          />
+        </svg>
+      </div>
+
+      <div class="contenedor-buscador-movil">
+        <div
+          id="abrir-buscador"
+          class="abrir-modal-buscador"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="1em"
+            viewBox="0 0 512 512"
+          >
+            <path
+              d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
+            />
+          </svg>
+        </div>
+        <div
+          id="contenedor-buscador"
+          class="contenedor-buscador hidden"
+        >
+          <div class="buscador buscador-movil">
+            <input
+              class="buscador-input"
+              type="text"
+              name=""
+              id=""
+              placeholder="Find the course or skill you want to learn"
+            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="1em"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
+              />
+            </svg>
+          </div>
+          <svg
+            id="cerrar-modal"
+            class="cerrar-modal"
+            xmlns="http://www.w3.org/2000/svg"
+            height="1em"
+            viewBox="0 0 384 512"
+          >
+            <path
+              d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <a
+        href="#"
+        class="courses"
+        >Courses</a
+      >
+      <nav class="menu_botones">
+        <a
+          href="./pago.html"
+          class="cart_outline"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="1em"
+            viewBox="0 0 576 512"
+          >
+            <path
+              d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+            />
+          </svg>
+        </a>
+        <a
+          href="./perfil.html"
+          class="person_outline"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="1em"
+            viewBox="0 0 448 512"
+          >
+            <path
+              d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"
+            />
+          </svg>
+        </a>
+      </nav>
+    </header>
+    <div class="main">
+      <section class="cursos_recomendados contenedor">
+        <span class="titulo">Popular Courses</span>
+        <div class="contenedor-listado">
+          <div class="listado_cursos_recomendados">
+            <div class="curso html">
+              <a
+                href="curso.html"
+                class="curso_card"
+              >
+                <img
+                  class="curso_imagen"
+                  src="/codecats-academy/assets/html-031e1638.png"
+                  alt=""
+                />
+                <span class="curso_nombre">Course Name</span>
+              </a>
+              <div class="curso_datos">
+                <div class="contenedor-me-gusta">
+                  <input
+                    class="input-check-back"
+                    type="checkbox"
+                    name=""
+                    id="corazon"
+                  />
+                  <svg
+                    class="me-gusta-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="44"
+                    height="41"
+                    viewBox="0 0 44 41"
+                    fill="none"
+                  >
+                    <path
+                      d="M32.0953 2C25.3332 2 22 8.66632 22 8.66632C22 8.66632 18.6669 2 11.9047 2C6.40917 2 2.05731 6.59767 2.00106 12.0838C1.88649 23.4718 11.035 31.5703 21.0626 38.3762C21.339 38.5643 21.6656 38.6649 22 38.6649C22.3344 38.6649 22.661 38.5643 22.9375 38.3762C32.964 31.5703 42.1125 23.4718 41.999 12.0838C41.9427 6.59767 37.5909 2 32.0953 2Z"
+                      stroke="white"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div class="curso__propiedad curso_duracion">
+                  <span class="propiedad__nombre">Durations</span>
+                  <span class="propiedad__valor">70hs</span>
+                </div>
+                <div class="curso__propiedad curso_modalidad">
+                  <span class="propiedad__nombre">Modality:</span>
+                  <span class="propiedad__valor">35 classes 2hs</span>
+                </div>
+                <div class="curso__propiedad curso_certificado">
+                  <span class="propiedad__nombre">Certification:</span
+                  ><span class="propiedad__valor">1 exam Note>=80%</span>
+                </div>
+                <div class="curso__propiedad curso_descripcion">
+                  <span class="propiedad__nombre">Description:</span
+                  ><span class="propiedad__valor"
+                    >Lorem ipsum dolor sit amet consectetur. Diam fames maecenas elementum senectus
+                    neque euismod non quis lobortis. Lectus in risus non.</span
+                  >
+                </div>
+                <div class="curso__botones">
+                  <button class="btn_add_to_cart">
+                    <span class="add_to_cart">Add to Cart</span>
+                  </button>
+                  <button class="btn_comprar">
+                    <span class="buy">Buy</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="curso javascript">
+              <a
+                href="curso.html"
+                class="curso_card"
+              >
+                <img
+                  class="curso_imagen"
+                  src="data:image/png;base64,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"
+                  alt=""
+                />
+                <span class="curso_nombre">Course Name</span>
+              </a>
+              <div class="curso_datos">
+                <div class="contenedor-me-gusta">
+                  <input
+                    class="input-check-back"
+                    type="checkbox"
+                    name=""
+                    id="corazon"
+                  />
+                  <svg
+                    class="me-gusta-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="44"
+                    height="41"
+                    viewBox="0 0 44 41"
+                    fill="none"
+                  >
+                    <path
+                      d="M32.0953 2C25.3332 2 22 8.66632 22 8.66632C22 8.66632 18.6669 2 11.9047 2C6.40917 2 2.05731 6.59767 2.00106 12.0838C1.88649 23.4718 11.035 31.5703 21.0626 38.3762C21.339 38.5643 21.6656 38.6649 22 38.6649C22.3344 38.6649 22.661 38.5643 22.9375 38.3762C32.964 31.5703 42.1125 23.4718 41.999 12.0838C41.9427 6.59767 37.5909 2 32.0953 2Z"
+                      stroke="white"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div class="curso__propiedad curso_duracion">
+                  <span class="propiedad__nombre">Durations</span>
+                  <span class="propiedad__valor">70hs</span>
+                </div>
+                <div class="curso__propiedad curso_modalidad">
+                  <span class="propiedad__nombre">Modality:</span>
+                  <span class="propiedad__valor">35 classes 2hs</span>
+                </div>
+                <div class="curso__propiedad curso_certificado">
+                  <span class="propiedad__nombre">Certification:</span
+                  ><span class="propiedad__valor">1 exam Note>=80%</span>
+                </div>
+                <div class="curso__propiedad curso_descripcion">
+                  <span class="propiedad__nombre">Description:</span
+                  ><span class="propiedad__valor"
+                    >Lorem ipsum dolor sit amet consectetur. Diam fames maecenas elementum senectus
+                    neque euismod non quis lobortis. Lectus in risus non.</span
+                  >
+                </div>
+                <div class="curso__botones">
+                  <button class="btn_add_to_cart">
+                    <span class="add_to_cart">Add to Cart</span>
+                  </button>
+                  <button class="btn_comprar">
+                    <span class="buy">Buy</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="curso css">
+              <a
+                href="curso.html"
+                class="curso_card"
+              >
+                <img
+                  class="curso_imagen"
+                  src="data:image/png;base64,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"
+                  alt=""
+                />
+                <span class="curso_nombre">Course Name</span>
+              </a>
+              <div class="curso_datos">
+                <div class="contenedor-me-gusta">
+                  <input
+                    class="input-check-back"
+                    type="checkbox"
+                    name=""
+                    id="corazon"
+                  />
+                  <svg
+                    class="me-gusta-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="44"
+                    height="41"
+                    viewBox="0 0 44 41"
+                    fill="none"
+                  >
+                    <path
+                      d="M32.0953 2C25.3332 2 22 8.66632 22 8.66632C22 8.66632 18.6669 2 11.9047 2C6.40917 2 2.05731 6.59767 2.00106 12.0838C1.88649 23.4718 11.035 31.5703 21.0626 38.3762C21.339 38.5643 21.6656 38.6649 22 38.6649C22.3344 38.6649 22.661 38.5643 22.9375 38.3762C32.964 31.5703 42.1125 23.4718 41.999 12.0838C41.9427 6.59767 37.5909 2 32.0953 2Z"
+                      stroke="white"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div class="curso__propiedad curso_duracion">
+                  <span class="propiedad__nombre">Durations</span>
+                  <span class="propiedad__valor">70hs</span>
+                </div>
+                <div class="curso__propiedad curso_modalidad">
+                  <span class="propiedad__nombre">Modality:</span>
+                  <span class="propiedad__valor">35 classes 2hs</span>
+                </div>
+                <div class="curso__propiedad curso_certificado">
+                  <span class="propiedad__nombre">Certification:</span
+                  ><span class="propiedad__valor">1 exam Note>=80%</span>
+                </div>
+                <div class="curso__propiedad curso_descripcion">
+                  <span class="propiedad__nombre">Description:</span
+                  ><span class="propiedad__valor"
+                    >Lorem ipsum dolor sit amet consectetur. Diam fames maecenas elementum senectus
+                    neque euismod non quis lobortis. Lectus in risus non.</span
+                  >
+                </div>
+                <div class="curso__botones">
+                  <button class="btn_add_to_cart">
+                    <span class="add_to_cart">Add to Cart</span>
+                  </button>
+                  <button class="btn_comprar">
+                    <span class="buy">Buy</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="curso csharp">
+              <a
+                href="curso.html"
+                class="curso_card"
+              >
+                <img
+                  class="curso_imagen"
+                  src="/codecats-academy/assets/csharp-931e0e5a.png"
+                  alt=""
+                />
+                <span class="curso_nombre">Course Name</span>
+              </a>
+              <div class="curso_datos">
+                <div class="contenedor-me-gusta">
+                  <input
+                    class="input-check-back"
+                    type="checkbox"
+                    name=""
+                    id="corazon"
+                  />
+                  <svg
+                    class="me-gusta-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="44"
+                    height="41"
+                    viewBox="0 0 44 41"
+                    fill="none"
+                  >
+                    <path
+                      d="M32.0953 2C25.3332 2 22 8.66632 22 8.66632C22 8.66632 18.6669 2 11.9047 2C6.40917 2 2.05731 6.59767 2.00106 12.0838C1.88649 23.4718 11.035 31.5703 21.0626 38.3762C21.339 38.5643 21.6656 38.6649 22 38.6649C22.3344 38.6649 22.661 38.5643 22.9375 38.3762C32.964 31.5703 42.1125 23.4718 41.999 12.0838C41.9427 6.59767 37.5909 2 32.0953 2Z"
+                      stroke="white"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div class="curso__propiedad curso_duracion">
+                  <span class="propiedad__nombre">Durations</span>
+                  <span class="propiedad__valor">70hs</span>
+                </div>
+                <div class="curso__propiedad curso_modalidad">
+                  <span class="propiedad__nombre">Modality:</span>
+                  <span class="propiedad__valor">35 classes 2hs</span>
+                </div>
+                <div class="curso__propiedad curso_certificado">
+                  <span class="propiedad__nombre">Certification:</span
+                  ><span class="propiedad__valor">1 exam Note>=80%</span>
+                </div>
+                <div class="curso__propiedad curso_descripcion">
+                  <span class="propiedad__nombre">Description:</span
+                  ><span class="propiedad__valor"
+                    >Lorem ipsum dolor sit amet consectetur. Diam fames maecenas elementum senectus
+                    neque euismod non quis lobortis. Lectus in risus non.</span
+                  >
+                </div>
+                <div class="curso__botones">
+                  <button class="btn_add_to_cart">
+                    <span class="add_to_cart">Add to Cart</span>
+                  </button>
+                  <button class="btn_comprar">
+                    <span class="buy">Buy</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="curso python">
+              <a
+                href="curso.html"
+                class="curso_card"
+              >
+                <img
+                  class="curso_imagen"
+                  src="/codecats-academy/assets/python-c90618a6.png"
+                  alt=""
+                />
+                <span class="curso_nombre">Course Name</span>
+              </a>
+              <div class="curso_datos">
+                <div class="contenedor-me-gusta">
+                  <input
+                    class="input-check-back"
+                    type="checkbox"
+                    name=""
+                    id="corazon"
+                  />
+                  <svg
+                    class="me-gusta-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="44"
+                    height="41"
+                    viewBox="0 0 44 41"
+                    fill="none"
+                  >
+                    <path
+                      d="M32.0953 2C25.3332 2 22 8.66632 22 8.66632C22 8.66632 18.6669 2 11.9047 2C6.40917 2 2.05731 6.59767 2.00106 12.0838C1.88649 23.4718 11.035 31.5703 21.0626 38.3762C21.339 38.5643 21.6656 38.6649 22 38.6649C22.3344 38.6649 22.661 38.5643 22.9375 38.3762C32.964 31.5703 42.1125 23.4718 41.999 12.0838C41.9427 6.59767 37.5909 2 32.0953 2Z"
+                      stroke="white"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div class="curso__propiedad curso_duracion">
+                  <span class="propiedad__nombre">Durations</span>
+                  <span class="propiedad__valor">70hs</span>
+                </div>
+                <div class="curso__propiedad curso_modalidad">
+                  <span class="propiedad__nombre">Modality:</span>
+                  <span class="propiedad__valor">35 classes 2hs</span>
+                </div>
+                <div class="curso__propiedad curso_certificado">
+                  <span class="propiedad__nombre">Certification:</span
+                  ><span class="propiedad__valor">1 exam Note>=80%</span>
+                </div>
+                <div class="curso__propiedad curso_descripcion">
+                  <span class="propiedad__nombre">Description:</span
+                  ><span class="propiedad__valor"
+                    >Lorem ipsum dolor sit amet consectetur. Diam fames maecenas elementum senectus
+                    neque euismod non quis lobortis. Lectus in risus non.</span
+                  >
+                </div>
+                <div class="curso__botones">
+                  <button class="btn_add_to_cart">
+                    <span class="add_to_cart">Add to Cart</span>
+                  </button>
+                  <button class="btn_comprar">
+                    <span class="buy">Buy</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="curso java">
+              <a
+                href="curso.html"
+                class="curso_card"
+              >
+                <img
+                  class="curso_imagen"
+                  src="data:image/png;base64,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"
+                  alt=""
+                />
+                <span class="curso_nombre">Course Name</span>
+              </a>
+              <div class="curso_datos">
+                <div class="contenedor-me-gusta">
+                  <input
+                    class="input-check-back"
+                    type="checkbox"
+                    name=""
+                    id="corazon"
+                  />
+                  <svg
+                    class="me-gusta-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="44"
+                    height="41"
+                    viewBox="0 0 44 41"
+                    fill="none"
+                  >
+                    <path
+                      d="M32.0953 2C25.3332 2 22 8.66632 22 8.66632C22 8.66632 18.6669 2 11.9047 2C6.40917 2 2.05731 6.59767 2.00106 12.0838C1.88649 23.4718 11.035 31.5703 21.0626 38.3762C21.339 38.5643 21.6656 38.6649 22 38.6649C22.3344 38.6649 22.661 38.5643 22.9375 38.3762C32.964 31.5703 42.1125 23.4718 41.999 12.0838C41.9427 6.59767 37.5909 2 32.0953 2Z"
+                      stroke="white"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div class="curso__propiedad curso_duracion">
+                  <span class="propiedad__nombre">Durations</span>
+                  <span class="propiedad__valor">70hs</span>
+                </div>
+                <div class="curso__propiedad curso_modalidad">
+                  <span class="propiedad__nombre">Modality:</span>
+                  <span class="propiedad__valor">35 classes 2hs</span>
+                </div>
+                <div class="curso__propiedad curso_certificado">
+                  <span class="propiedad__nombre">Certification:</span
+                  ><span class="propiedad__valor">1 exam Note>=80%</span>
+                </div>
+                <div class="curso__propiedad curso_descripcion">
+                  <span class="propiedad__nombre">Description:</span
+                  ><span class="propiedad__valor"
+                    >Lorem ipsum dolor sit amet consectetur. Diam fames maecenas elementum senectus
+                    neque euismod non quis lobortis. Lectus in risus non.</span
+                  >
+                </div>
+                <div class="curso__botones">
+                  <button class="btn_add_to_cart">
+                    <span class="add_to_cart">Add to Cart</span>
+                  </button>
+                  <button class="btn_comprar">
+                    <span class="buy">Buy</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="seccion_filtros contenedor">
+        <div class="filtros">
+          <div class="form-input buscador-curso">
+            <input
+              class="buscador-input"
+              type="text"
+              placeholder="to search for something type for example react, java, backend,etc"
+            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="1em"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
+              />
+            </svg>
+          </div>
+          <div class="form-input-select">
+            <div class="desplegable_select">
+              <span class="filter">category</span>
+              <svg
+                class="flecha"
+                xmlns="http://www.w3.org/2000/svg"
+                height="1em"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
+                />
+              </svg>
+            </div>
+            <div class="contenedor-opciones">
+              <div class="listado-opciones">
+                <div class="opcion">
+                  <input
+                    type="checkbox"
+                    id="category-option-1"
+                  /><label
+                    for="category-option-1"
+                    class=""
+                    >Option 1</label
+                  >
+                </div>
+                <div class="opcion">
+                  <input
+                    type="checkbox"
+                    id="category-option-2"
+                  /><label
+                    for="category-option-2"
+                    class=""
+                    >Option 2</label
+                  >
+                </div>
+                <div class="opcion">
+                  <input
+                    type="checkbox"
+                    id="category-option-3"
+                  /><label
+                    for="category-option-3"
+                    class=""
+                    >Option 3</label
+                  >
+                </div>
+                <div class="opcion">
+                  <input
+                    type="checkbox"
+                    id="category-option-4"
+                  /><label
+                    for="category-option-4"
+                    class=""
+                    >Option 4</label
+                  >
+                </div>
+                <div class="opcion">
+                  <input
+                    type="checkbox"
+                    id="category-option-5"
+                  /><label
+                    for="category-option-5"
+                    class=""
+                    >Option 5</label
+                  >
+                </div>
+                <div class="opcion">
+                  <input
+                    type="checkbox"
+                    id="category-option-5"
+                  /><label
+                    for="category-option-5"
+                    class=""
+                    >Option 5</label
+                  >
+                </div>
+                <div class="opcion">
+                  <input
+                    type="checkbox"
+                    id="category-option-5"
+                  /><label
+                    for="category-option-5"
+                    class=""
+                    >Option 5</label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-input-select">
+            <div class="desplegable_select">
+              <span class="filter">difficulty</span>
+              <svg
+                class="flecha"
+                xmlns="http://www.w3.org/2000/svg"
+                height="1em"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
+                />
+              </svg>
+            </div>
+            <div class="contenedor-opciones">
+              <div class="listado-opciones">
+                <div class="opcion">
+                  <input
+                    type="checkbox"
+                    id="difficulty-option-1"
+                  /><label
+                    for="difficulty-option-1"
+                    class=""
+                    >Option 1</label
+                  >
+                </div>
+                <div class="opcion">
+                  <input
+                    type="checkbox"
+                    id="difficulty-option-2"
+                  /><label
+                    for="difficulty-option-2"
+                    class=""
+                    >Option 2</label
+                  >
+                </div>
+                <div class="opcion">
+                  <input
+                    type="checkbox"
+                    id="difficulty-option-3"
+                  /><label
+                    for="difficulty-option-3"
+                    class=""
+                    >Option 3</label
+                  >
+                </div>
+                <div class="opcion">
+                  <input
+                    type="checkbox"
+                    id="difficulty-option-4"
+                  /><label
+                    for="difficulty-option-4"
+                    class=""
+                    >Option 4</label
+                  >
+                </div>
+                <div class="opcion">
+                  <input
+                    type="checkbox"
+                    id="difficulty-option-5"
+                  /><label
+                    for="difficulty-option-5"
+                    class=""
+                    >Option 5</label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-input-select">
+            <div class="desplegable_select">
+              <span class="filter">duration</span>
+              <svg
+                class="flecha"
+                xmlns="http://www.w3.org/2000/svg"
+                height="1em"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
+                />
+              </svg>
+            </div>
+            <div class="contenedor-opciones">
+              <div class="listado-opciones">
+                <div class="opcion">
+                  <input
+                    type="checkbox"
+                    id="duration-option-1"
+                  /><label
+                    for="duration-option-1"
+                    class=""
+                    >Option 1</label
+                  >
+                </div>
+                <div class="opcion">
+                  <input
+                    type="checkbox"
+                    id="duration-option-2"
+                  /><label
+                    for="duration-option-2"
+                    class=""
+                    >Option 2</label
+                  >
+                </div>
+                <div class="opcion">
+                  <input
+                    type="checkbox"
+                    id="duration-option-3"
+                  /><label
+                    for="duration-option-3"
+                    class=""
+                    >Option 3</label
+                  >
+                </div>
+                <div class="opcion">
+                  <input
+                    type="checkbox"
+                    id="duration-option-4"
+                  /><label
+                    for="duration-option-4"
+                    class=""
+                    >Option 4</label
+                  >
+                </div>
+                <div class="opcion">
+                  <input
+                    type="checkbox"
+                    id="duration-option-5"
+                  /><label
+                    for="duration-option-5"
+                    class=""
+                    >Option 5</label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-input-select">
+            <div class="desplegable_select">
+              <span class="filter">language</span>
+              <svg
+                class="flecha"
+                xmlns="http://www.w3.org/2000/svg"
+                height="1em"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
+                />
+              </svg>
+            </div>
+            <div class="contenedor-opciones">
+              <div class="listado-opciones">
+                <div class="opcion">
+                  <input
+                    type="checkbox"
+                    id="language-option-1"
+                  /><label
+                    for="language-option-1"
+                    class=""
+                    >Option 1</label
+                  >
+                </div>
+                <div class="opcion">
+                  <input
+                    type="checkbox"
+                    id="language-option-2"
+                  /><label
+                    for="language-option-2"
+                    class=""
+                    >Option 2</label
+                  >
+                </div>
+                <div class="opcion">
+                  <input
+                    type="checkbox"
+                    id="language-option-3"
+                  /><label
+                    for="language-option-3"
+                    class=""
+                    >Option 3</label
+                  >
+                </div>
+                <div class="opcion">
+                  <input
+                    type="checkbox"
+                    id="language-option-4"
+                  /><label
+                    for="language-option-4"
+                    class=""
+                    >Option 4</label
+                  >
+                </div>
+                <div class="opcion">
+                  <input
+                    type="checkbox"
+                    id="language-option-5"
+                  /><label
+                    for="language-option-5"
+                    class=""
+                    >Option 5</label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-input-select">
+            <div class="desplegable_select">
+              <span class="filter">certificate</span>
+              <svg
+                class="flecha"
+                xmlns="http://www.w3.org/2000/svg"
+                height="1em"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
+                />
+              </svg>
+            </div>
+
+            <div class="contenedor-opciones">
+              <div class="listado-opciones">
+                <div class="opcion">
+                  <input
+                    type="checkbox"
+                    id="certificate-option-1"
+                  /><label
+                    for="certificate-option-1"
+                    class=""
+                    >Option 1</label
+                  >
+                </div>
+                <div class="opcion">
+                  <input
+                    type="checkbox"
+                    id="certificate-option-2"
+                  /><label
+                    for="certificate-option-2"
+                    class=""
+                    >Option 2</label
+                  >
+                </div>
+                <div class="opcion">
+                  <input
+                    type="checkbox"
+                    id="certificate-option-3"
+                  /><label
+                    for="certificate-option-3"
+                    class=""
+                    >Option 3</label
+                  >
+                </div>
+                <div class="opcion">
+                  <input
+                    type="checkbox"
+                    id="certificate-option-4"
+                  /><label
+                    for="certificate-option-4"
+                    class=""
+                    >Option 4</label
+                  >
+                </div>
+                <div class="opcion">
+                  <input
+                    type="checkbox"
+                    id="certificate-option-5"
+                  /><label
+                    for="certificate-option-5"
+                    class=""
+                    >Option 5</label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-input-select">
+            <div class="desplegable_select">
+              <span class="filter">cost</span>
+              <svg
+                class="flecha"
+                xmlns="http://www.w3.org/2000/svg"
+                height="1em"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
+                />
+              </svg>
+            </div>
+
+            <div class="contenedor-opciones">
+              <div class="listado-opciones">
+                <div class="opcion">
+                  <input
+                    type="checkbox"
+                    id="cost-option-1"
+                  /><label
+                    for="cost-option-1"
+                    class=""
+                    >Option 1</label
+                  >
+                </div>
+                <div class="opcion">
+                  <input
+                    type="checkbox"
+                    id="cost-option-2"
+                  /><label
+                    for="cost-option-2"
+                    class=""
+                    >Option 2</label
+                  >
+                </div>
+                <div class="opcion">
+                  <input
+                    type="checkbox"
+                    id="cost-option-3"
+                  /><label
+                    for="cost-option-3"
+                    class=""
+                    >Option 3</label
+                  >
+                </div>
+                <div class="opcion">
+                  <input
+                    type="checkbox"
+                    id="cost-option-4"
+                  /><label
+                    for="cost-option-4"
+                    class=""
+                    >Option 4</label
+                  >
+                </div>
+                <div class="opcion">
+                  <input
+                    type="checkbox"
+                    id="cost-option-5"
+                  /><label
+                    for="cost-option-5"
+                    class=""
+                    >Option 5</label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="seccion_cursos contenedor">
+        <div class="listado_cursos">
+          <div class="curso">
+            <a
+              href="curso.html"
+              class="curso_card"
+            >
+              <img
+                src="data:image/png;base64,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"
+                alt=""
+                loading="lazy"
+                class="curso_imagen"
+              />
+              <span class="curso_nombre">Course Name</span>
+            </a>
+            <div class="curso_datos">
+              <div class="contenedor-me-gusta">
+                <input
+                  class="input-check-back"
+                  type="checkbox"
+                  name=""
+                  id="corazon"
+                />
+                <svg
+                  class="me-gusta-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="44"
+                  height="41"
+                  viewBox="0 0 44 41"
+                  fill="none"
+                >
+                  <path
+                    d="M32.0953 2C25.3332 2 22 8.66632 22 8.66632C22 8.66632 18.6669 2 11.9047 2C6.40917 2 2.05731 6.59767 2.00106 12.0838C1.88649 23.4718 11.035 31.5703 21.0626 38.3762C21.339 38.5643 21.6656 38.6649 22 38.6649C22.3344 38.6649 22.661 38.5643 22.9375 38.3762C32.964 31.5703 42.1125 23.4718 41.999 12.0838C41.9427 6.59767 37.5909 2 32.0953 2Z"
+                    stroke="white"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="curso__propiedad curso_duracion">
+                <span class="propiedad__nombre">Durations</span>
+                <span class="propiedad__valor">70hs</span>
+              </div>
+              <div class="curso__propiedad curso_modalidad">
+                <span class="propiedad__nombre">Modality:</span>
+                <span class="propiedad__valor">35 classes 2hs</span>
+              </div>
+              <div class="curso__propiedad curso_certificado">
+                <span class="propiedad__nombre">Certification:</span
+                ><span class="propiedad__valor">1 exam Note>=80%</span>
+              </div>
+              <div class="curso__propiedad curso_descripcion">
+                <span class="propiedad__nombre">Description:</span
+                ><span class="propiedad__valor"
+                  >Lorem ipsum dolor sit amet consectetur. Diam fames maecenas elementum senectus
+                  neque euismod non quis lobortis. Lectus in risus non.</span
+                >
+              </div>
+              <div class="curso__botones">
+                <button class="btn_add_to_cart">
+                  <span class="add_to_cart">Add to Cart</span>
+                </button>
+                <button class="btn_comprar">
+                  <span class="buy">Buy</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="curso">
+            <a
+              href="curso.html"
+              class="curso_card"
+            >
+              <img
+                src="/codecats-academy/assets/diseño-web-4febaea6.png"
+                alt=""
+                loading="lazy"
+                class="curso_imagen"
+              />
+              <span class="curso_nombre">Course Name</span>
+            </a>
+            <div class="curso_datos">
+              <div class="contenedor-me-gusta">
+                <input
+                  class="input-check-back"
+                  type="checkbox"
+                  name=""
+                  id="corazon"
+                />
+                <svg
+                  class="me-gusta-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="44"
+                  height="41"
+                  viewBox="0 0 44 41"
+                  fill="none"
+                >
+                  <path
+                    d="M32.0953 2C25.3332 2 22 8.66632 22 8.66632C22 8.66632 18.6669 2 11.9047 2C6.40917 2 2.05731 6.59767 2.00106 12.0838C1.88649 23.4718 11.035 31.5703 21.0626 38.3762C21.339 38.5643 21.6656 38.6649 22 38.6649C22.3344 38.6649 22.661 38.5643 22.9375 38.3762C32.964 31.5703 42.1125 23.4718 41.999 12.0838C41.9427 6.59767 37.5909 2 32.0953 2Z"
+                    stroke="white"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="curso__propiedad curso_duracion">
+                <span class="propiedad__nombre">Durations</span>
+                <span class="propiedad__valor">70hs</span>
+              </div>
+              <div class="curso__propiedad curso_modalidad">
+                <span class="propiedad__nombre">Modality:</span>
+                <span class="propiedad__valor">35 classes 2hs</span>
+              </div>
+              <div class="curso__propiedad curso_certificado">
+                <span class="propiedad__nombre">Certification:</span
+                ><span class="propiedad__valor">1 exam Note>=80%</span>
+              </div>
+              <div class="curso__propiedad curso_descripcion">
+                <span class="propiedad__nombre">Description:</span
+                ><span class="propiedad__valor"
+                  >Lorem ipsum dolor sit amet consectetur. Diam fames maecenas elementum senectus
+                  neque euismod non quis lobortis. Lectus in risus non.</span
+                >
+              </div>
+              <div class="curso__botones">
+                <button class="btn_add_to_cart">
+                  <span class="add_to_cart">Add to Cart</span>
+                </button>
+                <button class="btn_comprar">
+                  <span class="buy">Buy</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="curso">
+            <a
+              href="curso.html"
+              class="curso_card"
+            >
+              <img
+                src="data:image/png;base64,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"
+                alt=""
+                loading="lazy"
+                class="curso_imagen"
+              />
+              <span class="curso_nombre">Course Name</span>
+            </a>
+            <div class="curso_datos">
+              <div class="contenedor-me-gusta">
+                <input
+                  class="input-check-back"
+                  type="checkbox"
+                  name=""
+                  id="corazon"
+                />
+                <svg
+                  class="me-gusta-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="44"
+                  height="41"
+                  viewBox="0 0 44 41"
+                  fill="none"
+                >
+                  <path
+                    d="M32.0953 2C25.3332 2 22 8.66632 22 8.66632C22 8.66632 18.6669 2 11.9047 2C6.40917 2 2.05731 6.59767 2.00106 12.0838C1.88649 23.4718 11.035 31.5703 21.0626 38.3762C21.339 38.5643 21.6656 38.6649 22 38.6649C22.3344 38.6649 22.661 38.5643 22.9375 38.3762C32.964 31.5703 42.1125 23.4718 41.999 12.0838C41.9427 6.59767 37.5909 2 32.0953 2Z"
+                    stroke="white"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="curso__propiedad curso_duracion">
+                <span class="propiedad__nombre">Durations</span>
+                <span class="propiedad__valor">70hs</span>
+              </div>
+              <div class="curso__propiedad curso_modalidad">
+                <span class="propiedad__nombre">Modality:</span>
+                <span class="propiedad__valor">35 classes 2hs</span>
+              </div>
+              <div class="curso__propiedad curso_certificado">
+                <span class="propiedad__nombre">Certification:</span
+                ><span class="propiedad__valor">1 exam Note>=80%</span>
+              </div>
+              <div class="curso__propiedad curso_descripcion">
+                <span class="propiedad__nombre">Description:</span
+                ><span class="propiedad__valor"
+                  >Lorem ipsum dolor sit amet consectetur. Diam fames maecenas elementum senectus
+                  neque euismod non quis lobortis. Lectus in risus non.</span
+                >
+              </div>
+              <div class="curso__botones">
+                <button class="btn_add_to_cart">
+                  <span class="add_to_cart">Add to Cart</span>
+                </button>
+                <button class="btn_comprar">
+                  <span class="buy">Buy</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="curso">
+            <a
+              href="curso.html"
+              class="curso_card"
+            >
+              <img
+                src="/codecats-academy/assets/python-c90618a6.png"
+                alt=""
+                loading="lazy"
+                class="curso_imagen"
+              />
+              <span class="curso_nombre">Course Name</span>
+            </a>
+            <div class="curso_datos">
+              <div class="contenedor-me-gusta">
+                <input
+                  class="input-check-back"
+                  type="checkbox"
+                  name=""
+                  id="corazon"
+                />
+                <svg
+                  class="me-gusta-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="44"
+                  height="41"
+                  viewBox="0 0 44 41"
+                  fill="none"
+                >
+                  <path
+                    d="M32.0953 2C25.3332 2 22 8.66632 22 8.66632C22 8.66632 18.6669 2 11.9047 2C6.40917 2 2.05731 6.59767 2.00106 12.0838C1.88649 23.4718 11.035 31.5703 21.0626 38.3762C21.339 38.5643 21.6656 38.6649 22 38.6649C22.3344 38.6649 22.661 38.5643 22.9375 38.3762C32.964 31.5703 42.1125 23.4718 41.999 12.0838C41.9427 6.59767 37.5909 2 32.0953 2Z"
+                    stroke="white"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="curso__propiedad curso_duracion">
+                <span class="propiedad__nombre">Durations</span>
+                <span class="propiedad__valor">70hs</span>
+              </div>
+              <div class="curso__propiedad curso_modalidad">
+                <span class="propiedad__nombre">Modality:</span>
+                <span class="propiedad__valor">35 classes 2hs</span>
+              </div>
+              <div class="curso__propiedad curso_certificado">
+                <span class="propiedad__nombre">Certification:</span
+                ><span class="propiedad__valor">1 exam Note>=80%</span>
+              </div>
+              <div class="curso__propiedad curso_descripcion">
+                <span class="propiedad__nombre">Description:</span
+                ><span class="propiedad__valor"
+                  >Lorem ipsum dolor sit amet consectetur. Diam fames maecenas elementum senectus
+                  neque euismod non quis lobortis. Lectus in risus non.</span
+                >
+              </div>
+              <div class="curso__botones">
+                <button class="btn_add_to_cart">
+                  <span class="add_to_cart">Add to Cart</span>
+                </button>
+                <button class="btn_comprar">
+                  <span class="buy">Buy</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="curso">
+            <a
+              href="curso.html"
+              class="curso_card"
+            >
+              <img
+                src="data:image/png;base64,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"
+                alt=""
+                loading="lazy"
+                class="curso_imagen"
+              />
+              <span class="curso_nombre">Course Name</span>
+            </a>
+            <div class="curso_datos">
+              <div class="contenedor-me-gusta">
+                <input
+                  class="input-check-back"
+                  type="checkbox"
+                  name=""
+                  id="corazon"
+                />
+                <svg
+                  class="me-gusta-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="44"
+                  height="41"
+                  viewBox="0 0 44 41"
+                  fill="none"
+                >
+                  <path
+                    d="M32.0953 2C25.3332 2 22 8.66632 22 8.66632C22 8.66632 18.6669 2 11.9047 2C6.40917 2 2.05731 6.59767 2.00106 12.0838C1.88649 23.4718 11.035 31.5703 21.0626 38.3762C21.339 38.5643 21.6656 38.6649 22 38.6649C22.3344 38.6649 22.661 38.5643 22.9375 38.3762C32.964 31.5703 42.1125 23.4718 41.999 12.0838C41.9427 6.59767 37.5909 2 32.0953 2Z"
+                    stroke="white"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="curso__propiedad curso_duracion">
+                <span class="propiedad__nombre">Durations</span>
+                <span class="propiedad__valor">70hs</span>
+              </div>
+              <div class="curso__propiedad curso_modalidad">
+                <span class="propiedad__nombre">Modality:</span>
+                <span class="propiedad__valor">35 classes 2hs</span>
+              </div>
+              <div class="curso__propiedad curso_certificado">
+                <span class="propiedad__nombre">Certification:</span
+                ><span class="propiedad__valor">1 exam Note>=80%</span>
+              </div>
+              <div class="curso__propiedad curso_descripcion">
+                <span class="propiedad__nombre">Description:</span
+                ><span class="propiedad__valor"
+                  >Lorem ipsum dolor sit amet consectetur. Diam fames maecenas elementum senectus
+                  neque euismod non quis lobortis. Lectus in risus non.</span
+                >
+              </div>
+              <div class="curso__botones">
+                <button class="btn_add_to_cart">
+                  <span class="add_to_cart">Add to Cart</span>
+                </button>
+                <button class="btn_comprar">
+                  <span class="buy">Buy</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="curso">
+            <a
+              href="curso.html"
+              class="curso_card"
+            >
+              <img
+                src="/codecats-academy/assets/laravel-08a30c58.png"
+                alt=""
+                loading="lazy"
+                class="curso_imagen"
+              />
+              <span class="curso_nombre">Course Name</span>
+            </a>
+            <div class="curso_datos">
+              <div class="contenedor-me-gusta">
+                <input
+                  class="input-check-back"
+                  type="checkbox"
+                  name=""
+                  id="corazon"
+                />
+                <svg
+                  class="me-gusta-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="44"
+                  height="41"
+                  viewBox="0 0 44 41"
+                  fill="none"
+                >
+                  <path
+                    d="M32.0953 2C25.3332 2 22 8.66632 22 8.66632C22 8.66632 18.6669 2 11.9047 2C6.40917 2 2.05731 6.59767 2.00106 12.0838C1.88649 23.4718 11.035 31.5703 21.0626 38.3762C21.339 38.5643 21.6656 38.6649 22 38.6649C22.3344 38.6649 22.661 38.5643 22.9375 38.3762C32.964 31.5703 42.1125 23.4718 41.999 12.0838C41.9427 6.59767 37.5909 2 32.0953 2Z"
+                    stroke="white"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="curso__propiedad curso_duracion">
+                <span class="propiedad__nombre">Durations</span>
+                <span class="propiedad__valor">70hs</span>
+              </div>
+              <div class="curso__propiedad curso_modalidad">
+                <span class="propiedad__nombre">Modality:</span>
+                <span class="propiedad__valor">35 classes 2hs</span>
+              </div>
+              <div class="curso__propiedad curso_certificado">
+                <span class="propiedad__nombre">Certification:</span
+                ><span class="propiedad__valor">1 exam Note>=80%</span>
+              </div>
+              <div class="curso__propiedad curso_descripcion">
+                <span class="propiedad__nombre">Description:</span
+                ><span class="propiedad__valor"
+                  >Lorem ipsum dolor sit amet consectetur. Diam fames maecenas elementum senectus
+                  neque euismod non quis lobortis. Lectus in risus non.</span
+                >
+              </div>
+              <div class="curso__botones">
+                <button class="btn_add_to_cart">
+                  <span class="add_to_cart">Add to Cart</span>
+                </button>
+                <button class="btn_comprar">
+                  <span class="buy">Buy</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="curso">
+            <a
+              href="curso.html"
+              class="curso_card"
+            >
+              <img
+                src="/codecats-academy/assets/html-031e1638.png"
+                alt=""
+                loading="lazy"
+                class="curso_imagen"
+              />
+              <span class="curso_nombre">Course Name</span>
+            </a>
+            <div class="curso_datos">
+              <div class="contenedor-me-gusta">
+                <input
+                  class="input-check-back"
+                  type="checkbox"
+                  name=""
+                  id="corazon"
+                />
+                <svg
+                  class="me-gusta-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="44"
+                  height="41"
+                  viewBox="0 0 44 41"
+                  fill="none"
+                >
+                  <path
+                    d="M32.0953 2C25.3332 2 22 8.66632 22 8.66632C22 8.66632 18.6669 2 11.9047 2C6.40917 2 2.05731 6.59767 2.00106 12.0838C1.88649 23.4718 11.035 31.5703 21.0626 38.3762C21.339 38.5643 21.6656 38.6649 22 38.6649C22.3344 38.6649 22.661 38.5643 22.9375 38.3762C32.964 31.5703 42.1125 23.4718 41.999 12.0838C41.9427 6.59767 37.5909 2 32.0953 2Z"
+                    stroke="white"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="curso__propiedad curso_duracion">
+                <span class="propiedad__nombre">Durations</span>
+                <span class="propiedad__valor">70hs</span>
+              </div>
+              <div class="curso__propiedad curso_modalidad">
+                <span class="propiedad__nombre">Modality:</span>
+                <span class="propiedad__valor">35 classes 2hs</span>
+              </div>
+              <div class="curso__propiedad curso_certificado">
+                <span class="propiedad__nombre">Certification:</span
+                ><span class="propiedad__valor">1 exam Note>=80%</span>
+              </div>
+              <div class="curso__propiedad curso_descripcion">
+                <span class="propiedad__nombre">Description:</span
+                ><span class="propiedad__valor"
+                  >Lorem ipsum dolor sit amet consectetur. Diam fames maecenas elementum senectus
+                  neque euismod non quis lobortis. Lectus in risus non.</span
+                >
+              </div>
+              <div class="curso__botones">
+                <button class="btn_add_to_cart">
+                  <span class="add_to_cart">Add to Cart</span>
+                </button>
+                <button class="btn_comprar">
+                  <span class="buy">Buy</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="curso">
+            <a
+              href="curso.html"
+              class="curso_card"
+            >
+              <img
+                src="/codecats-academy/assets/mysql-23c64637.png"
+                alt=""
+                loading="lazy"
+                class="curso_imagen"
+              />
+              <span class="curso_nombre">Course Name</span>
+            </a>
+            <div class="curso_datos">
+              <div class="contenedor-me-gusta">
+                <input
+                  class="input-check-back"
+                  type="checkbox"
+                  name=""
+                  id="corazon"
+                />
+                <svg
+                  class="me-gusta-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="44"
+                  height="41"
+                  viewBox="0 0 44 41"
+                  fill="none"
+                >
+                  <path
+                    d="M32.0953 2C25.3332 2 22 8.66632 22 8.66632C22 8.66632 18.6669 2 11.9047 2C6.40917 2 2.05731 6.59767 2.00106 12.0838C1.88649 23.4718 11.035 31.5703 21.0626 38.3762C21.339 38.5643 21.6656 38.6649 22 38.6649C22.3344 38.6649 22.661 38.5643 22.9375 38.3762C32.964 31.5703 42.1125 23.4718 41.999 12.0838C41.9427 6.59767 37.5909 2 32.0953 2Z"
+                    stroke="white"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="curso__propiedad curso_duracion">
+                <span class="propiedad__nombre">Durations</span>
+                <span class="propiedad__valor">70hs</span>
+              </div>
+              <div class="curso__propiedad curso_modalidad">
+                <span class="propiedad__nombre">Modality:</span>
+                <span class="propiedad__valor">35 classes 2hs</span>
+              </div>
+              <div class="curso__propiedad curso_certificado">
+                <span class="propiedad__nombre">Certification:</span
+                ><span class="propiedad__valor">1 exam Note>=80%</span>
+              </div>
+              <div class="curso__propiedad curso_descripcion">
+                <span class="propiedad__nombre">Description:</span
+                ><span class="propiedad__valor"
+                  >Lorem ipsum dolor sit amet consectetur. Diam fames maecenas elementum senectus
+                  neque euismod non quis lobortis. Lectus in risus non.</span
+                >
+              </div>
+              <div class="curso__botones">
+                <button class="btn_add_to_cart">
+                  <span class="add_to_cart">Add to Cart</span>
+                </button>
+                <button class="btn_comprar">
+                  <span class="buy">Buy</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="curso">
+            <a
+              href="curso.html"
+              class="curso_card"
+            >
+              <img
+                src="data:image/png;base64,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"
+                alt=""
+                loading="lazy"
+                class="curso_imagen"
+              />
+              <span class="curso_nombre">Course Name</span>
+            </a>
+            <div class="curso_datos">
+              <div class="contenedor-me-gusta">
+                <input
+                  class="input-check-back"
+                  type="checkbox"
+                  name=""
+                  id="corazon"
+                />
+                <svg
+                  class="me-gusta-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="44"
+                  height="41"
+                  viewBox="0 0 44 41"
+                  fill="none"
+                >
+                  <path
+                    d="M32.0953 2C25.3332 2 22 8.66632 22 8.66632C22 8.66632 18.6669 2 11.9047 2C6.40917 2 2.05731 6.59767 2.00106 12.0838C1.88649 23.4718 11.035 31.5703 21.0626 38.3762C21.339 38.5643 21.6656 38.6649 22 38.6649C22.3344 38.6649 22.661 38.5643 22.9375 38.3762C32.964 31.5703 42.1125 23.4718 41.999 12.0838C41.9427 6.59767 37.5909 2 32.0953 2Z"
+                    stroke="white"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="curso__propiedad curso_duracion">
+                <span class="propiedad__nombre">Durations</span>
+                <span class="propiedad__valor">70hs</span>
+              </div>
+              <div class="curso__propiedad curso_modalidad">
+                <span class="propiedad__nombre">Modality:</span>
+                <span class="propiedad__valor">35 classes 2hs</span>
+              </div>
+              <div class="curso__propiedad curso_certificado">
+                <span class="propiedad__nombre">Certification:</span
+                ><span class="propiedad__valor">1 exam Note>=80%</span>
+              </div>
+              <div class="curso__propiedad curso_descripcion">
+                <span class="propiedad__nombre">Description:</span
+                ><span class="propiedad__valor"
+                  >Lorem ipsum dolor sit amet consectetur. Diam fames maecenas elementum senectus
+                  neque euismod non quis lobortis. Lectus in risus non.</span
+                >
+              </div>
+              <div class="curso__botones">
+                <button class="btn_add_to_cart">
+                  <span class="add_to_cart">Add to Cart</span>
+                </button>
+                <button class="btn_comprar">
+                  <span class="buy">Buy</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="curso">
+            <a
+              href="curso.html"
+              class="curso_card"
+            >
+              <img
+                src="/codecats-academy/assets/mean-92368ae7.png"
+                alt=""
+                loading="lazy"
+                class="curso_imagen"
+              />
+              <span class="curso_nombre">Course Name</span>
+            </a>
+            <div class="curso_datos">
+              <div class="contenedor-me-gusta">
+                <input
+                  class="input-check-back"
+                  type="checkbox"
+                  name=""
+                  id="corazon"
+                />
+                <svg
+                  class="me-gusta-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="44"
+                  height="41"
+                  viewBox="0 0 44 41"
+                  fill="none"
+                >
+                  <path
+                    d="M32.0953 2C25.3332 2 22 8.66632 22 8.66632C22 8.66632 18.6669 2 11.9047 2C6.40917 2 2.05731 6.59767 2.00106 12.0838C1.88649 23.4718 11.035 31.5703 21.0626 38.3762C21.339 38.5643 21.6656 38.6649 22 38.6649C22.3344 38.6649 22.661 38.5643 22.9375 38.3762C32.964 31.5703 42.1125 23.4718 41.999 12.0838C41.9427 6.59767 37.5909 2 32.0953 2Z"
+                    stroke="white"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="curso__propiedad curso_duracion">
+                <span class="propiedad__nombre">Durations</span>
+                <span class="propiedad__valor">70hs</span>
+              </div>
+              <div class="curso__propiedad curso_modalidad">
+                <span class="propiedad__nombre">Modality:</span>
+                <span class="propiedad__valor">35 classes 2hs</span>
+              </div>
+              <div class="curso__propiedad curso_certificado">
+                <span class="propiedad__nombre">Certification:</span
+                ><span class="propiedad__valor">1 exam Note>=80%</span>
+              </div>
+              <div class="curso__propiedad curso_descripcion">
+                <span class="propiedad__nombre">Description:</span
+                ><span class="propiedad__valor"
+                  >Lorem ipsum dolor sit amet consectetur. Diam fames maecenas elementum senectus
+                  neque euismod non quis lobortis. Lectus in risus non.</span
+                >
+              </div>
+              <div class="curso__botones">
+                <button class="btn_add_to_cart">
+                  <span class="add_to_cart">Add to Cart</span>
+                </button>
+                <button class="btn_comprar">
+                  <span class="buy">Buy</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="curso">
+            <a
+              href="curso.html"
+              class="curso_card"
+            >
+              <img
+                src="/codecats-academy/assets/c__-53f7878e.png"
+                alt=""
+                loading="lazy"
+                class="curso_imagen"
+              />
+              <span class="curso_nombre">Course Name</span>
+            </a>
+            <div class="curso_datos">
+              <div class="contenedor-me-gusta">
+                <input
+                  class="input-check-back"
+                  type="checkbox"
+                  name=""
+                  id="corazon"
+                />
+                <svg
+                  class="me-gusta-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="44"
+                  height="41"
+                  viewBox="0 0 44 41"
+                  fill="none"
+                >
+                  <path
+                    d="M32.0953 2C25.3332 2 22 8.66632 22 8.66632C22 8.66632 18.6669 2 11.9047 2C6.40917 2 2.05731 6.59767 2.00106 12.0838C1.88649 23.4718 11.035 31.5703 21.0626 38.3762C21.339 38.5643 21.6656 38.6649 22 38.6649C22.3344 38.6649 22.661 38.5643 22.9375 38.3762C32.964 31.5703 42.1125 23.4718 41.999 12.0838C41.9427 6.59767 37.5909 2 32.0953 2Z"
+                    stroke="white"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="curso__propiedad curso_duracion">
+                <span class="propiedad__nombre">Durations</span>
+                <span class="propiedad__valor">70hs</span>
+              </div>
+              <div class="curso__propiedad curso_modalidad">
+                <span class="propiedad__nombre">Modality:</span>
+                <span class="propiedad__valor">35 classes 2hs</span>
+              </div>
+              <div class="curso__propiedad curso_certificado">
+                <span class="propiedad__nombre">Certification:</span
+                ><span class="propiedad__valor">1 exam Note>=80%</span>
+              </div>
+              <div class="curso__propiedad curso_descripcion">
+                <span class="propiedad__nombre">Description:</span
+                ><span class="propiedad__valor"
+                  >Lorem ipsum dolor sit amet consectetur. Diam fames maecenas elementum senectus
+                  neque euismod non quis lobortis. Lectus in risus non.</span
+                >
+              </div>
+              <div class="curso__botones">
+                <button class="btn_add_to_cart">
+                  <span class="add_to_cart">Add to Cart</span>
+                </button>
+                <button class="btn_comprar">
+                  <span class="buy">Buy</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="curso">
+            <a
+              href="curso.html"
+              class="curso_card"
+            >
+              <img
+                src="data:image/png;base64,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"
+                alt=""
+                loading="lazy"
+                class="curso_imagen"
+              />
+              <span class="curso_nombre">Course Name</span>
+            </a>
+            <div class="curso_datos">
+              <div class="contenedor-me-gusta">
+                <input
+                  class="input-check-back"
+                  type="checkbox"
+                  name=""
+                  id="corazon"
+                />
+                <svg
+                  class="me-gusta-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="44"
+                  height="41"
+                  viewBox="0 0 44 41"
+                  fill="none"
+                >
+                  <path
+                    d="M32.0953 2C25.3332 2 22 8.66632 22 8.66632C22 8.66632 18.6669 2 11.9047 2C6.40917 2 2.05731 6.59767 2.00106 12.0838C1.88649 23.4718 11.035 31.5703 21.0626 38.3762C21.339 38.5643 21.6656 38.6649 22 38.6649C22.3344 38.6649 22.661 38.5643 22.9375 38.3762C32.964 31.5703 42.1125 23.4718 41.999 12.0838C41.9427 6.59767 37.5909 2 32.0953 2Z"
+                    stroke="white"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="curso__propiedad curso_duracion">
+                <span class="propiedad__nombre">Durations</span>
+                <span class="propiedad__valor">70hs</span>
+              </div>
+              <div class="curso__propiedad curso_modalidad">
+                <span class="propiedad__nombre">Modality:</span>
+                <span class="propiedad__valor">35 classes 2hs</span>
+              </div>
+              <div class="curso__propiedad curso_certificado">
+                <span class="propiedad__nombre">Certification:</span
+                ><span class="propiedad__valor">1 exam Note>=80%</span>
+              </div>
+              <div class="curso__propiedad curso_descripcion">
+                <span class="propiedad__nombre">Description:</span
+                ><span class="propiedad__valor"
+                  >Lorem ipsum dolor sit amet consectetur. Diam fames maecenas elementum senectus
+                  neque euismod non quis lobortis. Lectus in risus non.</span
+                >
+              </div>
+              <div class="curso__botones">
+                <button class="btn_add_to_cart">
+                  <span class="add_to_cart">Add to Cart</span>
+                </button>
+                <button class="btn_comprar">
+                  <span class="buy">Buy</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="curso">
+            <a
+              href="curso.html"
+              class="curso_card"
+            >
+              <img
+                src="data:image/png;base64,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"
+                alt=""
+                loading="lazy"
+                class="curso_imagen"
+              />
+              <span class="curso_nombre">Course Name</span>
+            </a>
+            <div class="curso_datos">
+              <div class="contenedor-me-gusta">
+                <input
+                  class="input-check-back"
+                  type="checkbox"
+                  name=""
+                  id="corazon"
+                />
+                <svg
+                  class="me-gusta-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="44"
+                  height="41"
+                  viewBox="0 0 44 41"
+                  fill="none"
+                >
+                  <path
+                    d="M32.0953 2C25.3332 2 22 8.66632 22 8.66632C22 8.66632 18.6669 2 11.9047 2C6.40917 2 2.05731 6.59767 2.00106 12.0838C1.88649 23.4718 11.035 31.5703 21.0626 38.3762C21.339 38.5643 21.6656 38.6649 22 38.6649C22.3344 38.6649 22.661 38.5643 22.9375 38.3762C32.964 31.5703 42.1125 23.4718 41.999 12.0838C41.9427 6.59767 37.5909 2 32.0953 2Z"
+                    stroke="white"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="curso__propiedad curso_duracion">
+                <span class="propiedad__nombre">Durations</span>
+                <span class="propiedad__valor">70hs</span>
+              </div>
+              <div class="curso__propiedad curso_modalidad">
+                <span class="propiedad__nombre">Modality:</span>
+                <span class="propiedad__valor">35 classes 2hs</span>
+              </div>
+              <div class="curso__propiedad curso_certificado">
+                <span class="propiedad__nombre">Certification:</span
+                ><span class="propiedad__valor">1 exam Note>=80%</span>
+              </div>
+              <div class="curso__propiedad curso_descripcion">
+                <span class="propiedad__nombre">Description:</span
+                ><span class="propiedad__valor"
+                  >Lorem ipsum dolor sit amet consectetur. Diam fames maecenas elementum senectus
+                  neque euismod non quis lobortis. Lectus in risus non.</span
+                >
+              </div>
+              <div class="curso__botones">
+                <button class="btn_add_to_cart">
+                  <span class="add_to_cart">Add to Cart</span>
+                </button>
+                <button class="btn_comprar">
+                  <span class="buy">Buy</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="curso">
+            <a
+              href="curso.html"
+              class="curso_card"
+            >
+              <img
+                src="/codecats-academy/assets/bootstrap-eb1e59d1.png"
+                alt=""
+                loading="lazy"
+                class="curso_imagen"
+              />
+              <span class="curso_nombre">Course Name</span>
+            </a>
+            <div class="curso_datos">
+              <div class="contenedor-me-gusta">
+                <input
+                  class="input-check-back"
+                  type="checkbox"
+                  name=""
+                  id="corazon"
+                />
+                <svg
+                  class="me-gusta-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="44"
+                  height="41"
+                  viewBox="0 0 44 41"
+                  fill="none"
+                >
+                  <path
+                    d="M32.0953 2C25.3332 2 22 8.66632 22 8.66632C22 8.66632 18.6669 2 11.9047 2C6.40917 2 2.05731 6.59767 2.00106 12.0838C1.88649 23.4718 11.035 31.5703 21.0626 38.3762C21.339 38.5643 21.6656 38.6649 22 38.6649C22.3344 38.6649 22.661 38.5643 22.9375 38.3762C32.964 31.5703 42.1125 23.4718 41.999 12.0838C41.9427 6.59767 37.5909 2 32.0953 2Z"
+                    stroke="white"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="curso__propiedad curso_duracion">
+                <span class="propiedad__nombre">Durations</span>
+                <span class="propiedad__valor">70hs</span>
+              </div>
+              <div class="curso__propiedad curso_modalidad">
+                <span class="propiedad__nombre">Modality:</span>
+                <span class="propiedad__valor">35 classes 2hs</span>
+              </div>
+              <div class="curso__propiedad curso_certificado">
+                <span class="propiedad__nombre">Certification:</span
+                ><span class="propiedad__valor">1 exam Note>=80%</span>
+              </div>
+              <div class="curso__propiedad curso_descripcion">
+                <span class="propiedad__nombre">Description:</span
+                ><span class="propiedad__valor"
+                  >Lorem ipsum dolor sit amet consectetur. Diam fames maecenas elementum senectus
+                  neque euismod non quis lobortis. Lectus in risus non.</span
+                >
+              </div>
+              <div class="curso__botones">
+                <button class="btn_add_to_cart">
+                  <span class="add_to_cart">Add to Cart</span>
+                </button>
+                <button class="btn_comprar">
+                  <span class="buy">Buy</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="curso">
+            <a
+              href="curso.html"
+              class="curso_card"
+            >
+              <img
+                src="/codecats-academy/assets/mongodb-a3b7c180.png"
+                alt=""
+                loading="lazy"
+                class="curso_imagen"
+              />
+              <span class="curso_nombre">Course Name</span>
+            </a>
+            <div class="curso_datos">
+              <div class="contenedor-me-gusta">
+                <input
+                  class="input-check-back"
+                  type="checkbox"
+                  name=""
+                  id="corazon"
+                />
+                <svg
+                  class="me-gusta-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="44"
+                  height="41"
+                  viewBox="0 0 44 41"
+                  fill="none"
+                >
+                  <path
+                    d="M32.0953 2C25.3332 2 22 8.66632 22 8.66632C22 8.66632 18.6669 2 11.9047 2C6.40917 2 2.05731 6.59767 2.00106 12.0838C1.88649 23.4718 11.035 31.5703 21.0626 38.3762C21.339 38.5643 21.6656 38.6649 22 38.6649C22.3344 38.6649 22.661 38.5643 22.9375 38.3762C32.964 31.5703 42.1125 23.4718 41.999 12.0838C41.9427 6.59767 37.5909 2 32.0953 2Z"
+                    stroke="white"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="curso__propiedad curso_duracion">
+                <span class="propiedad__nombre">Durations</span>
+                <span class="propiedad__valor">70hs</span>
+              </div>
+              <div class="curso__propiedad curso_modalidad">
+                <span class="propiedad__nombre">Modality:</span>
+                <span class="propiedad__valor">35 classes 2hs</span>
+              </div>
+              <div class="curso__propiedad curso_certificado">
+                <span class="propiedad__nombre">Certification:</span
+                ><span class="propiedad__valor">1 exam Note>=80%</span>
+              </div>
+              <div class="curso__propiedad curso_descripcion">
+                <span class="propiedad__nombre">Description:</span
+                ><span class="propiedad__valor"
+                  >Lorem ipsum dolor sit amet consectetur. Diam fames maecenas elementum senectus
+                  neque euismod non quis lobortis. Lectus in risus non.</span
+                >
+              </div>
+              <div class="curso__botones">
+                <button class="btn_add_to_cart">
+                  <span class="add_to_cart">Add to Cart</span>
+                </button>
+                <button class="btn_comprar">
+                  <span class="buy">Buy</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="curso">
+            <a
+              href="curso.html"
+              class="curso_card"
+            >
+              <img
+                src="/codecats-academy/assets/php-df359fa6.png"
+                alt=""
+                loading="lazy"
+                class="curso_imagen"
+              />
+              <span class="curso_nombre">Course Name</span>
+            </a>
+            <div class="curso_datos">
+              <div class="contenedor-me-gusta">
+                <input
+                  class="input-check-back"
+                  type="checkbox"
+                  name=""
+                  id="corazon"
+                />
+                <svg
+                  class="me-gusta-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="44"
+                  height="41"
+                  viewBox="0 0 44 41"
+                  fill="none"
+                >
+                  <path
+                    d="M32.0953 2C25.3332 2 22 8.66632 22 8.66632C22 8.66632 18.6669 2 11.9047 2C6.40917 2 2.05731 6.59767 2.00106 12.0838C1.88649 23.4718 11.035 31.5703 21.0626 38.3762C21.339 38.5643 21.6656 38.6649 22 38.6649C22.3344 38.6649 22.661 38.5643 22.9375 38.3762C32.964 31.5703 42.1125 23.4718 41.999 12.0838C41.9427 6.59767 37.5909 2 32.0953 2Z"
+                    stroke="white"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="curso__propiedad curso_duracion">
+                <span class="propiedad__nombre">Durations</span>
+                <span class="propiedad__valor">70hs</span>
+              </div>
+              <div class="curso__propiedad curso_modalidad">
+                <span class="propiedad__nombre">Modality:</span>
+                <span class="propiedad__valor">35 classes 2hs</span>
+              </div>
+              <div class="curso__propiedad curso_certificado">
+                <span class="propiedad__nombre">Certification:</span
+                ><span class="propiedad__valor">1 exam Note>=80%</span>
+              </div>
+              <div class="curso__propiedad curso_descripcion">
+                <span class="propiedad__nombre">Description:</span
+                ><span class="propiedad__valor"
+                  >Lorem ipsum dolor sit amet consectetur. Diam fames maecenas elementum senectus
+                  neque euismod non quis lobortis. Lectus in risus non.</span
+                >
+              </div>
+              <div class="curso__botones">
+                <button class="btn_add_to_cart">
+                  <span class="add_to_cart">Add to Cart</span>
+                </button>
+                <button class="btn_comprar">
+                  <span class="buy">Buy</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="curso">
+            <a
+              href="curso.html"
+              class="curso_card"
+            >
+              <img
+                src="/codecats-academy/assets/springboot-d6401186.png"
+                alt=""
+                loading="lazy"
+                class="curso_imagen"
+              />
+              <span class="curso_nombre">Course Name</span>
+            </a>
+            <div class="curso_datos">
+              <div class="contenedor-me-gusta">
+                <input
+                  class="input-check-back"
+                  type="checkbox"
+                  name=""
+                  id="corazon"
+                />
+                <svg
+                  class="me-gusta-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="44"
+                  height="41"
+                  viewBox="0 0 44 41"
+                  fill="none"
+                >
+                  <path
+                    d="M32.0953 2C25.3332 2 22 8.66632 22 8.66632C22 8.66632 18.6669 2 11.9047 2C6.40917 2 2.05731 6.59767 2.00106 12.0838C1.88649 23.4718 11.035 31.5703 21.0626 38.3762C21.339 38.5643 21.6656 38.6649 22 38.6649C22.3344 38.6649 22.661 38.5643 22.9375 38.3762C32.964 31.5703 42.1125 23.4718 41.999 12.0838C41.9427 6.59767 37.5909 2 32.0953 2Z"
+                    stroke="white"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="curso__propiedad curso_duracion">
+                <span class="propiedad__nombre">Durations</span>
+                <span class="propiedad__valor">70hs</span>
+              </div>
+              <div class="curso__propiedad curso_modalidad">
+                <span class="propiedad__nombre">Modality:</span>
+                <span class="propiedad__valor">35 classes 2hs</span>
+              </div>
+              <div class="curso__propiedad curso_certificado">
+                <span class="propiedad__nombre">Certification:</span
+                ><span class="propiedad__valor">1 exam Note>=80%</span>
+              </div>
+              <div class="curso__propiedad curso_descripcion">
+                <span class="propiedad__nombre">Description:</span
+                ><span class="propiedad__valor"
+                  >Lorem ipsum dolor sit amet consectetur. Diam fames maecenas elementum senectus
+                  neque euismod non quis lobortis. Lectus in risus non.</span
+                >
+              </div>
+              <div class="curso__botones">
+                <button class="btn_add_to_cart">
+                  <span class="add_to_cart">Add to Cart</span>
+                </button>
+                <button class="btn_comprar">
+                  <span class="buy">Buy</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="curso">
+            <a
+              href="curso.html"
+              class="curso_card"
+            >
+              <img
+                src="data:image/png;base64,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"
+                alt=""
+                loading="lazy"
+                class="curso_imagen"
+              />
+              <span class="curso_nombre">Course Name</span>
+            </a>
+            <div class="curso_datos">
+              <div class="contenedor-me-gusta">
+                <input
+                  class="input-check-back"
+                  type="checkbox"
+                  name=""
+                  id="corazon"
+                />
+                <svg
+                  class="me-gusta-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="44"
+                  height="41"
+                  viewBox="0 0 44 41"
+                  fill="none"
+                >
+                  <path
+                    d="M32.0953 2C25.3332 2 22 8.66632 22 8.66632C22 8.66632 18.6669 2 11.9047 2C6.40917 2 2.05731 6.59767 2.00106 12.0838C1.88649 23.4718 11.035 31.5703 21.0626 38.3762C21.339 38.5643 21.6656 38.6649 22 38.6649C22.3344 38.6649 22.661 38.5643 22.9375 38.3762C32.964 31.5703 42.1125 23.4718 41.999 12.0838C41.9427 6.59767 37.5909 2 32.0953 2Z"
+                    stroke="white"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="curso__propiedad curso_duracion">
+                <span class="propiedad__nombre">Durations</span>
+                <span class="propiedad__valor">70hs</span>
+              </div>
+              <div class="curso__propiedad curso_modalidad">
+                <span class="propiedad__nombre">Modality:</span>
+                <span class="propiedad__valor">35 classes 2hs</span>
+              </div>
+              <div class="curso__propiedad curso_certificado">
+                <span class="propiedad__nombre">Certification:</span
+                ><span class="propiedad__valor">1 exam Note>=80%</span>
+              </div>
+              <div class="curso__propiedad curso_descripcion">
+                <span class="propiedad__nombre">Description:</span
+                ><span class="propiedad__valor"
+                  >Lorem ipsum dolor sit amet consectetur. Diam fames maecenas elementum senectus
+                  neque euismod non quis lobortis. Lectus in risus non.</span
+                >
+              </div>
+              <div class="curso__botones">
+                <button class="btn_add_to_cart">
+                  <span class="add_to_cart">Add to Cart</span>
+                </button>
+                <button class="btn_comprar">
+                  <span class="buy">Buy</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="curso">
+            <a
+              href="curso.html"
+              class="curso_card"
+            >
+              <img
+                src="/codecats-academy/assets/sqlserver-6832742c.png"
+                alt=""
+                loading="lazy"
+                class="curso_imagen"
+              />
+              <span class="curso_nombre">Course Name</span>
+            </a>
+            <div class="curso_datos">
+              <div class="contenedor-me-gusta">
+                <input
+                  class="input-check-back"
+                  type="checkbox"
+                  name=""
+                  id="corazon"
+                />
+                <svg
+                  class="me-gusta-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="44"
+                  height="41"
+                  viewBox="0 0 44 41"
+                  fill="none"
+                >
+                  <path
+                    d="M32.0953 2C25.3332 2 22 8.66632 22 8.66632C22 8.66632 18.6669 2 11.9047 2C6.40917 2 2.05731 6.59767 2.00106 12.0838C1.88649 23.4718 11.035 31.5703 21.0626 38.3762C21.339 38.5643 21.6656 38.6649 22 38.6649C22.3344 38.6649 22.661 38.5643 22.9375 38.3762C32.964 31.5703 42.1125 23.4718 41.999 12.0838C41.9427 6.59767 37.5909 2 32.0953 2Z"
+                    stroke="white"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="curso__propiedad curso_duracion">
+                <span class="propiedad__nombre">Durations</span>
+                <span class="propiedad__valor">70hs</span>
+              </div>
+              <div class="curso__propiedad curso_modalidad">
+                <span class="propiedad__nombre">Modality:</span>
+                <span class="propiedad__valor">35 classes 2hs</span>
+              </div>
+              <div class="curso__propiedad curso_certificado">
+                <span class="propiedad__nombre">Certification:</span
+                ><span class="propiedad__valor">1 exam Note>=80%</span>
+              </div>
+              <div class="curso__propiedad curso_descripcion">
+                <span class="propiedad__nombre">Description:</span
+                ><span class="propiedad__valor"
+                  >Lorem ipsum dolor sit amet consectetur. Diam fames maecenas elementum senectus
+                  neque euismod non quis lobortis. Lectus in risus non.</span
+                >
+              </div>
+              <div class="curso__botones">
+                <button class="btn_add_to_cart">
+                  <span class="add_to_cart">Add to Cart</span>
+                </button>
+                <button class="btn_comprar">
+                  <span class="buy">Buy</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="curso">
+            <a
+              href="curso.html"
+              class="curso_card"
+            >
+              <img
+                src="/codecats-academy/assets/postgresql-af02b2db.png"
+                alt=""
+                loading="lazy"
+                class="curso_imagen"
+              />
+              <span class="curso_nombre">Course Name</span>
+            </a>
+            <div class="curso_datos">
+              <div class="contenedor-me-gusta">
+                <input
+                  class="input-check-back"
+                  type="checkbox"
+                  name=""
+                  id="corazon"
+                />
+                <svg
+                  class="me-gusta-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="44"
+                  height="41"
+                  viewBox="0 0 44 41"
+                  fill="none"
+                >
+                  <path
+                    d="M32.0953 2C25.3332 2 22 8.66632 22 8.66632C22 8.66632 18.6669 2 11.9047 2C6.40917 2 2.05731 6.59767 2.00106 12.0838C1.88649 23.4718 11.035 31.5703 21.0626 38.3762C21.339 38.5643 21.6656 38.6649 22 38.6649C22.3344 38.6649 22.661 38.5643 22.9375 38.3762C32.964 31.5703 42.1125 23.4718 41.999 12.0838C41.9427 6.59767 37.5909 2 32.0953 2Z"
+                    stroke="white"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="curso__propiedad curso_duracion">
+                <span class="propiedad__nombre">Durations</span>
+                <span class="propiedad__valor">70hs</span>
+              </div>
+              <div class="curso__propiedad curso_modalidad">
+                <span class="propiedad__nombre">Modality:</span>
+                <span class="propiedad__valor">35 classes 2hs</span>
+              </div>
+              <div class="curso__propiedad curso_certificado">
+                <span class="propiedad__nombre">Certification:</span
+                ><span class="propiedad__valor">1 exam Note>=80%</span>
+              </div>
+              <div class="curso__propiedad curso_descripcion">
+                <span class="propiedad__nombre">Description:</span
+                ><span class="propiedad__valor"
+                  >Lorem ipsum dolor sit amet consectetur. Diam fames maecenas elementum senectus
+                  neque euismod non quis lobortis. Lectus in risus non.</span
+                >
+              </div>
+              <div class="curso__botones">
+                <button class="btn_add_to_cart">
+                  <span class="add_to_cart">Add to Cart</span>
+                </button>
+                <button class="btn_comprar">
+                  <span class="buy">Buy</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="curso">
+            <a
+              href="curso.html"
+              class="curso_card"
+            >
+              <img
+                src="data:image/png;base64,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"
+                alt=""
+                loading="lazy"
+                class="curso_imagen"
+              />
+              <span class="curso_nombre">Course Name</span>
+            </a>
+            <div class="curso_datos">
+              <div class="contenedor-me-gusta">
+                <input
+                  class="input-check-back"
+                  type="checkbox"
+                  name=""
+                  id="corazon"
+                />
+                <svg
+                  class="me-gusta-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="44"
+                  height="41"
+                  viewBox="0 0 44 41"
+                  fill="none"
+                >
+                  <path
+                    d="M32.0953 2C25.3332 2 22 8.66632 22 8.66632C22 8.66632 18.6669 2 11.9047 2C6.40917 2 2.05731 6.59767 2.00106 12.0838C1.88649 23.4718 11.035 31.5703 21.0626 38.3762C21.339 38.5643 21.6656 38.6649 22 38.6649C22.3344 38.6649 22.661 38.5643 22.9375 38.3762C32.964 31.5703 42.1125 23.4718 41.999 12.0838C41.9427 6.59767 37.5909 2 32.0953 2Z"
+                    stroke="white"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="curso__propiedad curso_duracion">
+                <span class="propiedad__nombre">Durations</span>
+                <span class="propiedad__valor">70hs</span>
+              </div>
+              <div class="curso__propiedad curso_modalidad">
+                <span class="propiedad__nombre">Modality:</span>
+                <span class="propiedad__valor">35 classes 2hs</span>
+              </div>
+              <div class="curso__propiedad curso_certificado">
+                <span class="propiedad__nombre">Certification:</span
+                ><span class="propiedad__valor">1 exam Note>=80%</span>
+              </div>
+              <div class="curso__propiedad curso_descripcion">
+                <span class="propiedad__nombre">Description:</span
+                ><span class="propiedad__valor"
+                  >Lorem ipsum dolor sit amet consectetur. Diam fames maecenas elementum senectus
+                  neque euismod non quis lobortis. Lectus in risus non.</span
+                >
+              </div>
+              <div class="curso__botones">
+                <button class="btn_add_to_cart">
+                  <span class="add_to_cart">Add to Cart</span>
+                </button>
+                <button class="btn_comprar">
+                  <span class="buy">Buy</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="curso">
+            <a
+              href="curso.html"
+              class="curso_card"
+            >
+              <img
+                src="/codecats-academy/assets/csharp-931e0e5a.png"
+                alt=""
+                loading="lazy"
+                class="curso_imagen"
+              />
+              <span class="curso_nombre">Course Name</span>
+            </a>
+            <div class="curso_datos">
+              <div class="contenedor-me-gusta">
+                <input
+                  class="input-check-back"
+                  type="checkbox"
+                  name=""
+                  id="corazon"
+                />
+                <svg
+                  class="me-gusta-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="44"
+                  height="41"
+                  viewBox="0 0 44 41"
+                  fill="none"
+                >
+                  <path
+                    d="M32.0953 2C25.3332 2 22 8.66632 22 8.66632C22 8.66632 18.6669 2 11.9047 2C6.40917 2 2.05731 6.59767 2.00106 12.0838C1.88649 23.4718 11.035 31.5703 21.0626 38.3762C21.339 38.5643 21.6656 38.6649 22 38.6649C22.3344 38.6649 22.661 38.5643 22.9375 38.3762C32.964 31.5703 42.1125 23.4718 41.999 12.0838C41.9427 6.59767 37.5909 2 32.0953 2Z"
+                    stroke="white"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="curso__propiedad curso_duracion">
+                <span class="propiedad__nombre">Durations</span>
+                <span class="propiedad__valor">70hs</span>
+              </div>
+              <div class="curso__propiedad curso_modalidad">
+                <span class="propiedad__nombre">Modality:</span>
+                <span class="propiedad__valor">35 classes 2hs</span>
+              </div>
+              <div class="curso__propiedad curso_certificado">
+                <span class="propiedad__nombre">Certification:</span
+                ><span class="propiedad__valor">1 exam Note>=80%</span>
+              </div>
+              <div class="curso__propiedad curso_descripcion">
+                <span class="propiedad__nombre">Description:</span
+                ><span class="propiedad__valor"
+                  >Lorem ipsum dolor sit amet consectetur. Diam fames maecenas elementum senectus
+                  neque euismod non quis lobortis. Lectus in risus non.</span
+                >
+              </div>
+              <div class="curso__botones">
+                <button class="btn_add_to_cart">
+                  <span class="add_to_cart">Add to Cart</span>
+                </button>
+                <button class="btn_comprar">
+                  <span class="buy">Buy</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="footer">
+      <div class="footer_primera_seccion">
+        <a href="./contacto.html">Contact</a>
+        <a href="#">courses</a>
+        <a href="">frequent questions</a>
+        <a href="">help</a>
+        <a href="">about us</a>
+      </div>
+      <div class="footer_segunda_seccion">
+        <div class="line"></div>
+        <div class="contato">
+          <div class="linkedin">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="1em"
+              viewBox="0 0 448 512"
+            >
+              <path
+                d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+              />
+            </svg>
+          </div>
+          <div class="github">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="1em"
+              viewBox="0 0 496 512"
+            >
+              <path
+                d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
+              />
+            </svg>
+          </div>
+          <div class="google">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="1em"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div class="line"></div>
+      </div>
+      <div class="footer_tercera_seccion">
+        <span class="codecats_academy">CodeCats Academy</span
+        ><span class="copyright">Copyright @ 2023 CodeCats Academy</span>
+        <div class="informacion_legal">
+          <span class="privacy_policies">Privacy policies</span>
+          <div class="line line--vertical"></div>
+          <span class="legal_information">Legal information</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

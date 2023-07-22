@@ -1,0 +1,1 @@
+import"./buscador-a79ccb57.js";var e=Array.from(document.getElementsByClassName("desplegable__clases"));e.forEach(s=>{s.addEventListener("click",()=>{s.classList.toggle("mostrar-clases")})});var e=Array.from(document.getElementsByClassName("modulo"));e.forEach(s=>{s.addEventListener("click",()=>{s.classList.toggle("mostrar-datos")})});

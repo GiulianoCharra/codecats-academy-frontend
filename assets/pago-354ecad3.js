@@ -1,0 +1,1 @@
+import"./buscador-a79ccb57.js";import"./desplegable-d9fce096.js";document.addEventListener("click",function(c){let t=c.target;t.classList.contains("celda-dia")||(t=t.closest(".celda-dia")),t&&t.classList.toggle("dia-seleccionado")});
