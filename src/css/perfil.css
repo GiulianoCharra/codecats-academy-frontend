@@ -1,49 +1,10 @@
-@import url(./componenetes/cuerpo-pagina.css);
-@import url(./componenetes/header.css);
-@import url(./componenetes/footer.css);
 @import url(./componenetes/form-input.css);
 @import url(./componenetes/form-input-desplegable.css);
 @import url(./componenetes/calendario.css);
 @import url(./componenetes/boton-principal.css);
 
 :root {
-  --color-principal: #2e4052;
-  --color-logos: #cad6e2;
-  --color-input: #507da1;
-  --color-secundario: #507da1;
-
-  --color-html: #e44d26;
-  --color-html-gradient: linear-gradient(to right, #e44d26 100%, #e44d26 0%);
-
-  --color-css: #0277bd;
-  --color-css-gradient: linear-gradient(to right, #0277bd 100%, #0277bd 0%);
-
-  --color-js: #efc725;
-  --color-js-gradient: linear-gradient(to right, #efc725 100%, #efc725 0%);
-
-  --color-csharp: #4d187d;
-  --color-csharp-gradient: linear-gradient(to right, #4d187d 100%, #4d187d 0%);
-
-  --color-java: #e01f22;
-  --color-java-gradient: linear-gradient(to right, #e01f22 100%, #e01f22 0%);
-
-  --color-python: #ffd651;
-  --color-python-gradient: linear-gradient(to right, #ffd651 100%, #ffd651 0%);
-
-  --color-react: #05a5d1;
-  --color-react-gradient: linear-gradient(to right, #05a5d1 100%, #05a5d1 0%);
-
   --color-celeste: #5cddeb;
-  --color-celeste-gradient: linear-gradient(to right, #5cddeb 100%, #5cddeb 0%);
-
-  --bg-color-header-gradient: linear-gradient(to right, #517fa4 0%, #243949 100%);
-  --bg-color-curso-card-gradient: linear-gradient(180deg, #507da1 0%, #507da100 100%);
-  --bg-color-curso-card-datos-gradient: linear-gradient(180deg, #507da1 0%, #507da1e6 100%);
-
-  --animacion-rebote: cubic-bezier(0.47, 1.64, 0.41, 0.8);
-  --duracion-animacion: 800ms;
-  --bg-color-boton-secundario: #2d3f5066;
-  --bg-color-boton-principal: #05a5d1;
 }
 
 .seccion_perfil {

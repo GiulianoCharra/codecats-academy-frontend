@@ -62,29 +62,30 @@
     />
     <link
       rel="stylesheet"
-      href="./css/styles.css"
+      href="./styles.css"
     />
     <script
       defer
       type="module"
-      src="./js/script.js"
+      src="./script.js"
     ></script>
-    <script
-      defer
-      type="module"
-      src="./js/componentes/buscador.js"
-    ></script>
+    <link
+      id="cssPaginaActual"
+      rel="stylesheet"
+      href=""
+    />
   </head>
   <body class="pantalla">
     <header class="header">
       <a
-        href="#"
+        data-name="principal"
+        href="./pages/principal.html"
         class="contenedor-logo"
       >
         <span class="codecats_academy">CodeCats Academy</span>
         <img
           class="logo"
-          src="./assets/images/logo.png"
+          src="./assets/images/general/logo.png"
           alt=""
         />
       </a>
@@ -93,8 +94,7 @@
         <input
           class="buscador-input"
           type="text"
-          name=""
-          id=""
+          id="buscador-escritorio"
           placeholder="Find the course or skill you want to learn"
         />
         <svg
@@ -131,8 +131,7 @@
             <input
               class="buscador-input"
               type="text"
-              name=""
-              id=""
+              id="buscador-movil"
               placeholder="Find the course or skill you want to learn"
             />
             <svg
@@ -160,12 +159,14 @@
       </div>
 
       <a
+        data-name="cursos"
         href="./pages/cursos.html"
         class="courses"
         >Courses</a
       >
       <nav class="menu_botones">
         <a
+          data-name="pago"
           href="./pages/pago.html"
           class="cart_outline"
         >
@@ -180,7 +181,8 @@
           </svg>
         </a>
         <a
-          href="./perfil.html"
+          data-name="perfil"
+          href="./pages/perfil.html"
           class="person_outline"
         >
           <svg
@@ -195,354 +197,19 @@
         </a>
       </nav>
     </header>
-    <main class="main">
-      <section class="seccion-inicio contenedor">
-        <div class="contenedor__descripcion">
-          <span class="titulo_seccion">dasdas</span
-          ><span class="descripcion"
-            >Lorem ipsum dolor sit amet consectetur. Nam tortor nisl lectus pellentesque dolor
-            hendrerit. Morbi in vestibulum nisl enim bibendum. Neque viverra egestas morbi posuere
-            tempus venenatis eleifend. Egestas urna eu risus nunc tellus.</span
-          >
-        </div>
-        <div class="image_principal"></div>
-      </section>
-      <section class="seccion-cursos contenedor">
-        <div class="curso">
-          <div class="curso_card">
-            <img
-              class="curso_imagen"
-              src="./assets/images/curso_imagen.png"
-              alt="logo de react"
-            />
-            <span class="curso_nombre">Course Name</span>
-          </div>
-          <div class="curso_datos">
-            <div class="contenedor-me-gusta">
-              <input
-                class="input-check-back"
-                type="checkbox"
-                name=""
-                id="corazon"
-              />
-              <svg
-                class="me-gusta-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                width="44"
-                height="41"
-                viewBox="0 0 44 41"
-                fill="none"
-              >
-                <path
-                  d="M32.0953 2C25.3332 2 22 8.66632 22 8.66632C22 8.66632 18.6669 2 11.9047 2C6.40917 2 2.05731 6.59767 2.00106 12.0838C1.88649 23.4718 11.035 31.5703 21.0626 38.3762C21.339 38.5643 21.6656 38.6649 22 38.6649C22.3344 38.6649 22.661 38.5643 22.9375 38.3762C32.964 31.5703 42.1125 23.4718 41.999 12.0838C41.9427 6.59767 37.5909 2 32.0953 2Z"
-                  stroke="white"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </div>
-            <div class="curso__propiedad curso_duracion">
-              <span class="propiedad__nombre">Durations</span>
-              <span class="propiedad__valor">70hs</span>
-            </div>
-            <div class="curso__propiedad curso_modalidad">
-              <span class="propiedad__nombre">Modality:</span>
-              <span class="propiedad__valor">35 classes 2hs</span>
-            </div>
-            <div class="curso__propiedad curso_certificado">
-              <span class="propiedad__nombre">Certification:</span
-              ><span class="propiedad__valor">1 exam Note>=80%</span>
-            </div>
-            <div class="curso__propiedad curso_descripcion">
-              <span class="propiedad__nombre">Description:</span
-              ><span class="propiedad__valor"
-                >Lorem ipsum dolor sit amet consectetur. Diam fames maecenas elementum senectus
-                neque euismod non quis lobortis. Lectus in risus non.</span
-              >
-            </div>
-            <div class="curso__botones">
-              <button class="btn_add_to_cart">
-                <span class="add_to_cart">Add to Cart</span>
-              </button>
-              <button class="btn_comprar">
-                <span class="buy">Buy</span>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="contenedor__descripcion">
-          <span class="titulo_seccion">dasdas</span
-          ><span class="descripcion"
-            >Lorem ipsum dolor sit amet consectetur. Nam tortor nisl lectus pellentesque dolor
-            hendrerit. Morbi in vestibulum nisl enim bibendum. Neque viverra egestas morbi posuere
-            tempus venenatis eleifend. Egestas urna eu risus nunc tellus. Magna non enim sit integer
-            dictum nunc magna quis.</span
-          >
-        </div>
-      </section>
-      <section class="seccion-historia contenedor">
-        <div class="contenedor__descripcion">
-          <span class="titulo_seccion">dasdas</span
-          ><span class="descripcion"
-            >Lorem ipsum dolor sit amet consectetur. Nam tortor nisl lectus pellentesque dolor
-            hendrerit. Morbi in vestibulum nisl enim bibendum. Neque viverra egestas morbi posuere
-            tempus venenatis eleifend. Egestas urna eu risus nunc tellus. Magna non enim sit integer
-            dictum nunc magna quis.</span
-          >
-        </div>
-        <div class="historia__imagen"></div>
-      </section>
-      <section class="seccion-equipo contenedor">
-        <span class="titulo_seccion">Our team</span>
-        <div class="equipo__introduccion">
-          <span class="descripcion"
-            >Lorem ipsum dolor sit amet consectetur. Suspendisse at sed vel pulvinar. Donec
-            ullamcorper tellus mollis fermentum id curabitur porta.</span
-          >
-          <div class="introduccion__imagen"></div>
-          <span class="descripcion"
-            >Lorem ipsum dolor sit amet consectetur. Suspendisse at sed vel pulvinar. Donec
-            ullamcorper tellus mollis fermentum id curabitur porta.</span
-          >
-        </div>
-        <div class="equipo__descripciones">
-          <div class="equipo">
-            <div class="equipo__imagen"></div>
-            <span class="descripcion"
-              >Lorem ipsum dolor sit amet consectetur. Suspendisse at sed vel pulvinar. Donec
-              ullamcorper tellus mollis fermentum id curabitur porta.</span
-            >
-          </div>
-          <div class="equipo">
-            <div class="equipo__imagen"></div>
-            <span class="descripcion"
-              >Lorem ipsum dolor sit amet consectetur. Suspendisse at sed vel pulvinar. Donec
-              ullamcorper tellus mollis fermentum id curabitur porta.</span
-            >
-          </div>
-          <div class="equipo">
-            <div class="equipo__imagen"></div>
-            <span class="descripcion"
-              >Lorem ipsum dolor sit amet consectetur. Suspendisse at sed vel pulvinar. Donec
-              ullamcorper tellus mollis fermentum id curabitur porta.</span
-            >
-          </div>
-        </div>
-        <div class="contenedor-listado">
-          <div class="listado_integrantes">
-            <div class="integrante">
-              <img
-                src="./assets/images/integrantes/integrante-foto-1.png"
-                class="integrante__foto"
-                alt=""
-                loading="lazy"
-              />
-              <div class="integrante__datos">
-                <span class="integrante__nombre">Name</span
-                ><span class="integrante__posicion">Posicion</span
-                ><span class="integrante__descripcion"
-                  >Lorem ipsum dolor sit amet consectetur. Euismod tristique rutrum sit metus
-                  hendrerit orci mauris. Sit sit elit egestas orci adipiscing elementum.</span
-                >
-              </div>
-            </div>
-            <div class="integrante">
-              <img
-                class="integrante__foto"
-                src="./assets/images/integrantes/integrante-foto-2.png"
-                alt=""
-                loading="lazy"
-              />
-              <div class="integrante__datos">
-                <span class="integrante__nombre">Name</span
-                ><span class="integrante__posicion">Posicion</span
-                ><span class="integrante__descripcion"
-                  >Lorem ipsum dolor sit amet consectetur. Euismod tristique rutrum sit metus
-                  hendrerit orci mauris. Sit sit elit egestas orci adipiscing elementum.</span
-                >
-              </div>
-            </div>
-            <div class="integrante">
-              <img
-                class="integrante__foto"
-                src="./assets/images/integrantes/integrante-foto-3.png"
-                alt=""
-                loading="lazy"
-              />
-              <div class="integrante__datos">
-                <span class="integrante__nombre">Name</span
-                ><span class="integrante__posicion">Posicion</span
-                ><span class="integrante__descripcion"
-                  >Lorem ipsum dolor sit amet consectetur. Euismod tristique rutrum sit metus
-                  hendrerit orci mauris. Sit sit elit egestas orci adipiscing elementum.</span
-                >
-              </div>
-            </div>
-            <div class="integrante">
-              <img
-                class="integrante__foto"
-                src="./assets/images/integrantes/integrante-foto-4.png"
-                alt=""
-                loading="lazy"
-              />
-              <div class="integrante__datos">
-                <span class="integrante__nombre">Name</span
-                ><span class="integrante__posicion">Posicion</span
-                ><span class="integrante__descripcion"
-                  >Lorem ipsum dolor sit amet consectetur. Euismod tristique rutrum sit metus
-                  hendrerit orci mauris. Sit sit elit egestas orci adipiscing elementum.</span
-                >
-              </div>
-            </div>
-            <div class="integrante">
-              <img
-                class="integrante__foto"
-                src="./assets/images/integrantes/integrante-foto-5.png"
-                alt=""
-                loading="lazy"
-              />
-              <div class="integrante__datos">
-                <span class="integrante__nombre">Name</span
-                ><span class="integrante__posicion">Posicion</span
-                ><span class="integrante__descripcion"
-                  >Lorem ipsum dolor sit amet consectetur. Euismod tristique rutrum sit metus
-                  hendrerit orci mauris. Sit sit elit egestas orci adipiscing elementum.</span
-                >
-              </div>
-            </div>
-            <div class="integrante">
-              <img
-                class="integrante__foto"
-                src="./assets/images/integrantes/integrante-foto-6.png"
-                alt=""
-                loading="lazy"
-              />
-              <div class="integrante__datos">
-                <span class="integrante__nombre">Name</span
-                ><span class="integrante__posicion">Posicion</span
-                ><span class="integrante__descripcion"
-                  >Lorem ipsum dolor sit amet consectetur. Euismod tristique rutrum sit metus
-                  hendrerit orci mauris. Sit sit elit egestas orci adipiscing elementum.</span
-                >
-              </div>
-            </div>
-            <div class="integrante">
-              <img
-                class="integrante__foto"
-                src="./assets/images/integrantes/integrante-foto-7.png"
-                alt=""
-                loading="lazy"
-              />
-              <div class="integrante__datos">
-                <span class="integrante__nombre">Name</span
-                ><span class="integrante__posicion">Posicion</span
-                ><span class="integrante__descripcion"
-                  >Lorem ipsum dolor sit amet consectetur. Euismod tristique rutrum sit metus
-                  hendrerit orci mauris. Sit sit elit egestas orci adipiscing elementum.</span
-                >
-              </div>
-            </div>
-            <div class="integrante">
-              <img
-                class="integrante__foto"
-                src="./assets/images/integrantes/integrante-foto-8.png"
-                alt=""
-                loading="lazy"
-              />
-              <div class="integrante__datos">
-                <span class="integrante__nombre">Name</span
-                ><span class="integrante__posicion">Posicion</span
-                ><span class="integrante__descripcion"
-                  >Lorem ipsum dolor sit amet consectetur. Euismod tristique rutrum sit metus
-                  hendrerit orci mauris. Sit sit elit egestas orci adipiscing elementum.</span
-                >
-              </div>
-            </div>
-            <div class="integrante">
-              <img
-                class="integrante__foto"
-                src="./assets/images/integrantes/integrante-foto-9.png"
-                alt=""
-                loading="lazy"
-              />
-              <div class="integrante__datos">
-                <span class="integrante__nombre">Name</span
-                ><span class="integrante__posicion">Posicion</span
-                ><span class="integrante__descripcion"
-                  >Lorem ipsum dolor sit amet consectetur. Euismod tristique rutrum sit metus
-                  hendrerit orci mauris. Sit sit elit egestas orci adipiscing elementum.</span
-                >
-              </div>
-            </div>
-            <div class="integrante">
-              <img
-                class="integrante__foto"
-                src="./assets/images/integrantes/integrante-foto-10.png"
-                alt=""
-                loading="lazy"
-              />
-              <div class="integrante__datos">
-                <span class="integrante__nombre">Name</span
-                ><span class="integrante__posicion">Posicion</span
-                ><span class="integrante__descripcion"
-                  >Lorem ipsum dolor sit amet consectetur. Euismod tristique rutrum sit metus
-                  hendrerit orci mauris. Sit sit elit egestas orci adipiscing elementum.</span
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="forma_trabajo contenedor">
-        <span class="titulo_seccion"></span>
-        <div class="ambiente contenedor">
-          <div class="ambiente__imagen"></div>
-          <div class="contenedor__descripcion">
-            <span class="ambiente__titulo">dasdas</span
-            ><span class="descripcion"
-              >Lorem ipsum dolor sit amet consectetur. Nam tortor nisl lectus pellentesque dolor
-              hendrerit. Morbi in vestibulum nisl enim bibendum.</span
-            >
-          </div>
-        </div>
-        <div class="ambiente contenedor">
-          <div class="ambiente__imagen"></div>
-          <div class="contenedor__descripcion">
-            <span class="ambiente__titulo">dasdas</span
-            ><span class="descripcion"
-              >Lorem ipsum dolor sit amet consectetur. Nam tortor nisl lectus pellentesque dolor
-              hendrerit. Morbi in vestibulum nisl enim bibendum.</span
-            >
-          </div>
-        </div>
-        <div class="ambiente contenedor">
-          <div class="ambiente__imagen"></div>
-          <div class="contenedor__descripcion">
-            <span class="ambiente__titulo">dasdas</span
-            ><span class="descripcion"
-              >Lorem ipsum dolor sit amet consectetur. Nam tortor nisl lectus pellentesque dolor
-              hendrerit. Morbi in vestibulum nisl enim bibendum. Neque viverra egestas morbi posuere
-              tempus venenatis eleifend. Egestas urna eu risus nunc tellus.</span
-            >
-          </div>
-        </div>
-        <div class="ambiente contenedor">
-          <div class="ambiente__imagen"></div>
-          <div class="contenedor__descripcion">
-            <span class="ambiente__titulo">dasdas</span
-            ><span class="descripcion"
-              >Lorem ipsum dolor sit amet consectetur. Nam tortor nisl lectus pellentesque dolor
-              hendrerit. Morbi in vestibulum nisl enim bibendum.</span
-            >
-          </div>
-        </div>
-      </section>
-    </main>
+    <main class="main"></main>
     <div class="footer">
       <div class="footer_primera_seccion">
-        <a href="./pages/contacto.html">Contact</a>
-        <a href="pages/cursos.html">courses</a>
+        <a
+          data-name="contacto"
+          href="./pages/contacto.html"
+          >Contact</a
+        >
+        <a
+          data-name="cursos"
+          href="pages/cursos.html"
+          >courses</a
+        >
         <a href="">frequent questions</a>
         <a href="">help</a>
         <a href="">about us</a>

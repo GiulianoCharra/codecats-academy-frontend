@@ -20,7 +20,6 @@
   width: 200px;
   height: 227px;
   flex-shrink: 0;
-  /* background: url(../../assets/images/curso_imagen.png) 50% / contain no-repeat; */
   object-fit: contain;
   object-position: center;
 }

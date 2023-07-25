@@ -1,0 +1,70 @@
+[
+  {
+    "name": "cursos",
+    "defaultValue": "",
+    "description": "listado de cursos disponibles",
+    "listado": [
+      {
+        "id_curso": 1,
+        "nombre": "expert on react",
+        "duracion_minutos": 200,
+        "imagen_url": "url",
+        "cant_modulos": 4,
+        "modulos": [
+          {
+            "id_modulo": 1,
+            "nombre": "introduccion a react",
+            "duracion_minutos": 40,
+            "cant_clases": 4,
+            "descripcion": "algo",
+            "clases": [
+              { "id_clase": 1, "nombre": "1 clase intalando react", "duracion_minutos": 10 },
+              { "id_clase": 2, "nombre": "2 clase intalando react", "duracion_minutos": 10 },
+              { "id_clase": 3, "nombre": "3 clase intalando react", "duracion_minutos": 10 },
+              { "id_clase": 4, "nombre": "4 clase intalando react", "duracion_minutos": 10 }
+            ]
+          },
+          {
+            "id_modulo": 1,
+            "nombre": "introduccion a react",
+            "duracion_minutos": 40,
+            "cant_clases": 2,
+            "descripcion": "algo",
+            "clases": [
+              { "id_clase": 1, "nombre": "1 clase intalando react", "duracion_minutos": 10 },
+              { "id_clase": 2, "nombre": "2 clase intalando react", "duracion_minutos": 10 },
+              { "id_clase": 3, "nombre": "3 clase intalando react", "duracion_minutos": 10 },
+              { "id_clase": 4, "nombre": "4 clase intalando react", "duracion_minutos": 10 }
+            ]
+          },
+          {
+            "id_modulo": 3,
+            "nombre": "introduccion a react",
+            "duracion_minutos": 40,
+            "cant_clases": 4,
+            "descripcion": "algo",
+            "clases": [
+              { "id_clase": 1, "nombre": "1 clase intalando react", "duracion_minutos": 10 },
+              { "id_clase": 2, "nombre": "2 clase intalando react", "duracion_minutos": 10 },
+              { "id_clase": 3, "nombre": "3 clase intalando react", "duracion_minutos": 10 },
+              { "id_clase": 4, "nombre": "4 clase intalando react", "duracion_minutos": 10 }
+            ]
+          },
+          {
+            "id_modulo": 4,
+            "nombre": "introduccion a react",
+            "duracion_minutos": 40,
+            "cant_clases": 4,
+            "descripcion": "algo",
+            "clases": [
+              { "id_clase": 1, "nombre": "1 clase intalando react", "duracion_minutos": 10 },
+              { "id_clase": 2, "nombre": "2 clase intalando react", "duracion_minutos": 10 },
+              { "id_clase": 3, "nombre": "3 clase intalando react", "duracion_minutos": 10 },
+              { "id_clase": 4, "nombre": "4 clase intalando react", "duracion_minutos": 10 }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

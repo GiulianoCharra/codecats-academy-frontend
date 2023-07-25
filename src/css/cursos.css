@@ -1,19 +1,10 @@
-@import url(./componenetes/cuerpo-pagina.css);
-@import url(./componenetes/header.css);
-@import url(./componenetes/footer.css);
 @import url(./componenetes/curso-card.css);
 @import url(./componenetes/form-input.css);
 @import url(./componenetes/form-input-desplegable.css);
 @import url(./componenetes/curso-card.css);
 
 :root {
-  --color-principal: #2e4052;
-  --color-logos: #cad6e2;
-  --color-input: #507da1;
-  --color-secundario: #507da1;
-
   --color-html: 228, 77, 38;
-  --color-html-gradient: linear-gradient(rgba(var(--color-html), 1), rgba(var(--color-html), 0));
 
   --color-css: 2, 119, 189;
 
@@ -26,19 +17,6 @@
   --color-python: 255, 214, 81;
 
   --color-react: 5, 165, 209;
-
-  --color-celeste: #5cddeb;
-  --color-celeste-gradient: linear-gradient(to right, #5cddeb 100%, #5cddeb00 0%);
-
-  --bg-color-header-gradient: linear-gradient(to right, #517fa4 0%, #243949 100%);
-  --bg-color-curso-card-gradient: linear-gradient(180deg, #507da1 0%, #507da100 100%);
-  --bg-color-curso-card-datos-gradient: linear-gradient(180deg, #507da1 0%, #507da1e6 100%);
-
-  --animacion-rebote: cubic-bezier(0.47, 1.64, 0.41, 0.8);
-  --duracion-animacion: 800ms;
-
-  --bg-color-boton-secundario: #2d3f5066;
-  --bg-color-boton-principal: #05a5d1;
 }
 
 .cursos_recomendados {
@@ -197,22 +175,19 @@
 }
 
 @media screen and (max-width: 750px) {
-
   .listado_cursos {
     justify-content: flex-start;
   }
-  
+
   .listado_cursos .curso {
     /* flex-direction: column; */
     align-content: flex-start;
 
     /* width: 30%; */
   }
-  .listado_cursos .curso .curso_datos{
+  .listado_cursos .curso .curso_datos {
     /* width: 70%; */
   }
-
-
 
   .form-input-select {
     width: 100%;
