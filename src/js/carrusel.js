@@ -1,5 +1,4 @@
-export function carrusel() {
-  const listadoIntegrantes = document.querySelector(".listado_integrantes");
+export function carrusel(listadoIntegrantes) {
   let centroPantalla = calcularCentroPantalla();
   function autoScroll() {
     listadoIntegrantes.scrollBy({ left: 340, behavior: "smooth" });

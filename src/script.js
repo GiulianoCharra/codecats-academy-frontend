@@ -12,15 +12,48 @@ const estados = {
 };
 
 const cssPaginaActual = document.getElementById("cssPaginaActual");
+let htmlTemplates = new Map();
 const main = document.querySelector("main");
-let links = document.querySelectorAll("a");
-let estadoActual = estados.principal;
-let urlActual = "./pages/principal.html";
+let paginaActual = "";
+let urlActual = "";
 
-setearLinks(links);
-setPage(urlActual, estadoActual);
 buscador();
 desplegable();
+
+window.addEventListener("DOMContentLoaded", () => {
+  paginaActual = location.pathname.split("/");
+  paginaActual = paginaActual[paginaActual.length - 1];
+  urlActual = `./pages/${paginaActual}.html`;
+  setPage(urlActual, paginaActual);
+});
+
+addEventListenerWithCheck(document, "click", async (e) => {
+  console.log(htmlTemplates);
+  const link = e.target.closest("a");
+  if (!link) {
+    return;
+  }
+  e.preventDefault();
+  let name = link.dataset.name;
+  if (htmlTemplates.get(name)) {
+    animarCargar(htmlTemplates.get(name).body, htmlTemplates.get(name).urlCss);
+  } else {
+    setPage(link.href, name);
+  }
+});
+
+window.addEventListener("popstate", (e) => {
+  let estado = e.state;
+  if (estado.templateHtml) {
+    animarCargar(estado.templateHtml, estado.urlCss);
+  } else {
+    let path = location.pathname + ".html";
+    console.log(path);
+    let body = cargarRecurso(path);
+    main.innerHTML = body;
+    history.pushState({ template: body }, "", name);
+  }
+});
 
 async function cargarRecurso(url) {
   const res = await fetch(url);
@@ -33,25 +66,41 @@ function cargarCss(urlCss) {
 
 async function setPage(url, name) {
   let urlCss = url.replace("pages", "css").replace(".html", ".css");
-
   let body = await cargarRecurso(url);
-  cargarCss(urlCss);
-  main.innerHTML = body;
+  animarCargar(body, urlCss);
+
+  if (!htmlTemplates[name]) {
+    htmlTemplates.set(name, { body, urlCss });
+  }
 
   history.pushState({ templateHtml: body, urlCss }, "", name);
-  estadoActual = estados[name];
+  paginaActual = estados[name];
   urlActual = url;
-  verificarEstadoActual();
+}
+
+function animarCargar(body, urlCss) {
+  main.classList.add("animacion-salida");
+  setTimeout(() => {
+    main.innerHTML = body;
+    cargarCss(urlCss);
+    verificarEstadoActual();
+
+    main.classList.add("animacion-entrada");
+    main.classList.remove("animacion-salida");
+    setTimeout(() => {
+      main.classList.remove("animacion-entrada");
+    }, 200);
+  }, 200);
 }
 
 function verificarEstadoActual() {
-  if (estadoActual == estados.principal) {
+  if (paginaActual == estados.principal) {
+    let listadoIntegrantes = document.querySelector(".listado-integrantes");
+    carrusel(listadoIntegrantes);
   }
-  if (estadoActual == estados.cursos) {
-    links = main.querySelectorAll("a");
-    setearLinks(links);
+  if (paginaActual == estados.cursos) {
   }
-  if (estadoActual == estados.curso) {
+  if (paginaActual == estados.curso) {
     let desplegables = Array.from(document.getElementsByClassName("desplegable__clases"));
     desplegables.forEach((desplegable) => {
       addEventListenerWithCheck(desplegable, "click", () => mostrarElementos("mostrar-clases"));
@@ -62,45 +111,14 @@ function verificarEstadoActual() {
       addEventListenerWithCheck(desplegable, "click", () => mostrarElementos("mostrar-datos"));
     });
   }
-  if (estadoActual == estados.pago) {
+  if (paginaActual == estados.pago) {
     addEventListenerWithCheck(document, "click", (e) => mostrarCalendario(e));
   }
-  if (estadoActual == estados.perfil) {
+  if (paginaActual == estados.perfil) {
   }
-  if (estadoActual == estados.contacto) {
+  if (paginaActual == estados.contacto) {
   }
 }
-
-function setearLinks(links) {
-  links.forEach((link) => {
-    addEventListenerWithCheck(link, "click", async (e) => {
-      e.preventDefault();
-      let name = link.dataset.name;
-      setPage(link.href, name);
-    });
-  });
-}
-
-window.addEventListener("popstate", (e) => {
-  let estado = e.state;
-  if (estado.templateHtml) {
-    main.innerHTML = estado.templateHtml;
-    cargarCss(estado.urlCss);
-  } else {
-    let path = location.pathname + ".html";
-    console.log(path);
-    let body = cargarRecurso(path);
-    main.innerHTML = body;
-    history.pushState({ template: body }, "", name);
-  }
-});
-
-// window.addEventListener("loadstart", (e) => {
-//   e.preventDefault();
-//   e.stopPropagation();
-//   console.log(urlActual, estadoActual);
-//   setPage(urlActual, estadoActual);
-// });
 
 function mostrarCalendario(event) {
   let celda = event.target;
