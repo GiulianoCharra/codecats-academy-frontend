@@ -1,7 +1,7 @@
-@import url(./css/componenetes/cuerpo-pagina.css);
-@import url(./css/componenetes/header.css);
-@import url(./css/componenetes/footer.css);
-@import url(./css/componenetes/curso-card.css);
+@import url(./css/cuerpo-pagina.css);
+@import url(./css/header.css);
+@import url(./css/footer.css);
+@import url(./css/curso-card.css);
 
 :root {
   --color-principal: #2e4052;
@@ -19,7 +19,6 @@
   --bg-color-boton-secundario: #2d3f5066;
   --bg-color-boton-principal: #05a5d1;
 }
-
 
 /* Para la animación de entrada */
 .animacion-entrada {

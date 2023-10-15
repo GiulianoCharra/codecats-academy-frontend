@@ -1,8 +1,9 @@
 import { carrusel } from "./js/carrusel.js";
 import { buscador } from "./js/buscador.js";
 import { desplegable } from "./js/desplegable.js";
+import { pages } from "./rutas";
 
-const estados = {
+const paginas = {
   principal: "principal",
   cursos: "cursos",
   curso: "curso",
@@ -23,66 +24,96 @@ desplegable();
 window.addEventListener("DOMContentLoaded", () => {
   paginaActual = location.pathname.split("/");
   paginaActual = paginaActual[paginaActual.length - 1];
+  if (!paginaActual) {
+    paginaActual = paginas.principal;
+  }
   urlActual = `./pages/${paginaActual}.html`;
-  setPage(urlActual, paginaActual);
+  cargarPagina(urlActual, paginaActual);
 });
 
 addEventListenerWithCheck(document, "click", async (e) => {
-  console.log(htmlTemplates);
   const link = e.target.closest("a");
   if (!link) {
     return;
   }
   e.preventDefault();
   let name = link.dataset.name;
-  if (htmlTemplates.get(name)) {
-    animarCargar(htmlTemplates.get(name).body, htmlTemplates.get(name).urlCss);
-  } else {
-    setPage(link.href, name);
+  let url = link.href;
+  if (pages[name]) {
+    main.innerHTML = pages[name];
   }
+
+  /* if (estaCargado(name)) {
+    cargarPaginaGuardada(htmlTemplates.get(name));
+  } else {
+    cargarPagina(url, name);
+  } */
 });
 
 window.addEventListener("popstate", (e) => {
   let estado = e.state;
-  if (estado.templateHtml) {
-    animarCargar(estado.templateHtml, estado.urlCss);
-  } else {
-    let path = location.pathname + ".html";
-    console.log(path);
-    let body = cargarRecurso(path);
-    main.innerHTML = body;
-    history.pushState({ template: body }, "", name);
+  if (estado.body) {
+    animarCargar(estado.body, estado.urlCss);
   }
 });
 
-async function cargarRecurso(url) {
+function estaCargado(name) {
+  return htmlTemplates.get(name);
+}
+
+async function cargarHtml(url) {
   const res = await fetch(url);
   return await res.text();
 }
 
-function cargarCss(urlCss) {
+function setCss(urlCss) {
   cssPaginaActual.href = urlCss;
 }
 
-async function setPage(url, name) {
-  let urlCss = url.replace("pages", "css").replace(".html", ".css");
-  let body = await cargarRecurso(url);
-  animarCargar(body, urlCss);
+function setHtmlBody(body) {
+  main.innerHTML = body;
+}
 
-  if (!htmlTemplates[name]) {
-    htmlTemplates.set(name, { body, urlCss });
+async function cargarPagina(datos) {
+  if (datos) {
+    cargarPaginaGuardada(datos);
+  } else {
+    cargarPaginaCompleta(datos.urlHtml, datos.name);
   }
+  paginaActual = paginas[datos.name];
+  urlActual = urlHtml;
+}
 
-  history.pushState({ templateHtml: body, urlCss }, "", name);
-  paginaActual = estados[name];
-  urlActual = url;
+async function cargarPaginaCompleta(urlHtml, name) {
+  let urlCss = url.replace("pages", "css").replace(".html", ".css");
+  let body = await cargarHtml(urlHtml);
+  animarCargar(body, urlCss);
+  agregarState(name, urlHtml, body, urlCss);
+  pushStateHistory(name);
+}
+
+async function cargarPaginaGuardada(datos) {
+  animarCargar(datos.body, datos.urlCss);
+  pushStateHistory(datos.name);
+}
+
+async function retrocederPaginaGuardada(body, urlCss) {
+  animarCargar(body, urlCss);
+}
+
+function agregarState(name, urlHtml, body, urlCss) {
+  htmlTemplates.set(name, { name, urlHtml, body, urlCss });
+}
+
+function pushStateHistory(name) {
+  history.pushState(htmlTemplates.get(name), "", name);
 }
 
 function animarCargar(body, urlCss) {
   main.classList.add("animacion-salida");
   setTimeout(() => {
-    main.innerHTML = body;
-    cargarCss(urlCss);
+    setHtmlBody(body);
+    setCss(urlCss);
     verificarEstadoActual();
 
     main.classList.add("animacion-entrada");
@@ -90,17 +121,17 @@ function animarCargar(body, urlCss) {
     setTimeout(() => {
       main.classList.remove("animacion-entrada");
     }, 200);
-  }, 200);
+  }, 250);
 }
 
 function verificarEstadoActual() {
-  if (paginaActual == estados.principal) {
+  if (paginaActual == paginas.principal) {
     let listadoIntegrantes = document.querySelector(".listado-integrantes");
     carrusel(listadoIntegrantes);
   }
-  if (paginaActual == estados.cursos) {
+  if (paginaActual == paginas.cursos) {
   }
-  if (paginaActual == estados.curso) {
+  if (paginaActual == paginas.curso) {
     let desplegables = Array.from(document.getElementsByClassName("desplegable__clases"));
     desplegables.forEach((desplegable) => {
       addEventListenerWithCheck(desplegable, "click", () => mostrarElementos("mostrar-clases"));
@@ -111,12 +142,12 @@ function verificarEstadoActual() {
       addEventListenerWithCheck(desplegable, "click", () => mostrarElementos("mostrar-datos"));
     });
   }
-  if (paginaActual == estados.pago) {
+  if (paginaActual == paginas.pago) {
     addEventListenerWithCheck(document, "click", (e) => mostrarCalendario(e));
   }
-  if (paginaActual == estados.perfil) {
+  if (paginaActual == paginas.perfil) {
   }
-  if (paginaActual == estados.contacto) {
+  if (paginaActual == paginas.contacto) {
   }
 }
 

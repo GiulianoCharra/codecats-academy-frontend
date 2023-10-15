@@ -1,7 +1,7 @@
-@import url(./componenetes/curso-card.css);
-@import url(./componenetes/form-input.css);
-@import url(./componenetes/form-input-desplegable.css);
-@import url(./componenetes/curso-card.css);
+@import url(../../css/curso-card.css);
+@import url(../../css/form-input.css);
+@import url(../../css/form-input-desplegable.css);
+@import url(../../css/curso-card.css);
 
 :root {
   --color-html: 228, 77, 38;

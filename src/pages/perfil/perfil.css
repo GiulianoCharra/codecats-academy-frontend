@@ -1,7 +1,7 @@
-@import url(./componenetes/form-input.css);
-@import url(./componenetes/form-input-desplegable.css);
-@import url(./componenetes/calendario.css);
-@import url(./componenetes/boton-principal.css);
+@import url(../../css/form-input.css);
+@import url(../../css/form-input-desplegable.css);
+@import url(../../css/calendario.css);
+@import url(../../css/boton-principal.css);
 
 :root {
   --color-celeste: #5cddeb;

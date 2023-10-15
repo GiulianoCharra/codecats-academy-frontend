@@ -1,7 +1,6 @@
 [
   {
     "name": "cursos",
-    "defaultValue": "",
     "description": "listado de cursos disponibles",
     "listado": [
       {
