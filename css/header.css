@@ -248,7 +248,8 @@ svg {
   width: 100%;
 }
 
-.error-message {
+.error-message,
+.error-message-register {
   color: rgb(192, 23, 23);
   font-size: 14px;
   margin-top: 10px;
@@ -302,4 +303,12 @@ svg {
   background-color: #ffffff;
   left: 0px;
   bottom: -10px;
+}
+
+#register-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
 }

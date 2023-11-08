@@ -217,6 +217,7 @@
             />
           </svg>
         </button>
+        <!-- Modal para loguerese-->
         <div
           id="loginModal"
           class="modal"
@@ -268,9 +269,81 @@
                 Log in
               </button>
             </form>
-            <p>¿No tienes una cuenta? <a href="#">Registrarse</a></p>
+            <p>
+              ¿No tienes una cuenta?
+              <a
+                href="#"
+                id="openRegisterModal"
+                >Registrarse</a
+              >
+            </p>
           </div>
         </div>
+        <!-- Modal para registrarse-->
+        <div
+          id="registerModal"
+          class="modal"
+        >
+          <div class="modal-content">
+            <span
+              class="close"
+              id="closeRegisterModal"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 384 512"
+              >
+                <path
+                  d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+                /></svg
+            ></span>
+            <!-- Contenido del formulario de registro -->
+            <h2>Registrarse</h2>
+            <form id="register-form">
+              <p
+                id="error-message-register"
+                class="error-message-register"
+              ></p>
+              <!-- Campos de registro (nombre, correo electrónico, contraseña, etc.) -->
+              <div class="form-input">
+                <label for="usernameRegister">Username</label>
+                <input
+                  type="text"
+                  name="usernameRegister"
+                  id="usernameRegister"
+                  required
+                />
+              </div>
+              <div class="form-input">
+                <label for="emailRegister">Email</label>
+                <input
+                  type="email"
+                  name="emailRegister"
+                  id="emailRegister"
+                  required
+                />
+              </div>
+              <div class="form-input">
+                <label for="passwordRegister">Password</label>
+                <input
+                  type="password"
+                  name="passwordRegister"
+                  id="passwordRegister"
+                  required
+                />
+              </div>
+
+              <!-- Agregar más campos según sea necesario -->
+
+              <button
+                type="submit"
+                class="btn_pricipal"
+              >
+                Registrar
+              </button>
+            </form>
+          </div>
+        </div>
+
         <!-- Modal de usuario logueado -->
         <div
           id="userMenuModal"

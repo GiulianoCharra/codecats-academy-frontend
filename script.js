@@ -237,6 +237,18 @@ window.addEventListener("click", function (event) {
   }
 });
 
+// Mostrar el modal de registro al hacer clic en el botón "Registrarse"
+document.getElementById("openRegisterModal").addEventListener("click", function () {
+  document.getElementById("registerModal").style.display = "block";
+});
+
+// Cerrar el modal de registro al hacer clic en el botón de cierre (×)
+document.getElementById("closeRegisterModal").addEventListener("click", function () {
+  document.getElementById("registerModal").style.display = "none";
+});
+
+// También puedes agregar código para enviar el formulario de registro y manejar la lógica de registro en esta sección.
+
 document.getElementById("viewProfile").addEventListener("click", async (e) => {
   e.preventDefault();
   const name = "perfil";
@@ -297,8 +309,57 @@ document.getElementById("login-form").addEventListener("submit", async function 
   }
 });
 
-document.getElementById("logout").addEventListener("click", logout);
+// Agrega un evento para manejar el envío del formulario de registro
+document.getElementById("register-form").addEventListener("submit", async function (event) {
+  event.preventDefault(); // Evita el envío del formulario predeterminado
+  await registerUser(); // Llama a la función para registrar al usuario utilizando await
+});
 
+// Función para registrar un usuario
+async function registerUser() {
+  const registerForm = document.getElementById("register-form");
+  const username = document.getElementById("usernameRegister").value;
+  const email = document.getElementById("emailRegister").value;
+  const password = document.getElementById("passwordRegister").value;
+
+  const userData = {
+    username,
+    email,
+    password,
+  };
+
+  try {
+    const response = await fetch("https://codecats-academy-backend.onrender.com/api/auth/register", {
+      method: "POST",
+      body: JSON.stringify(userData),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      console.log("Usuario registrado:", data);
+
+      // Cierra el modal de registro
+      document.getElementById("registerModal").style.display = "none";
+      document.getElementById("register-form").reset();
+      document.getElementById("loginModal").style.display = "block";
+
+    } else if (response.status === 400) {
+      const errorData = await response.json();
+      document.getElementById("error-message-register").textContent = errorData.message;
+    } else {
+      throw new Error("Error en la solicitud de registro");
+    }
+  } catch (error) {
+    console.error("Error en el registro:", error);
+
+    // Puedes mostrar un mensaje de error o realizar otras acciones en caso de error.
+  }
+}
+
+document.getElementById("logout").addEventListener("click", logout);
 function logout() {
   // Elimina el token del localStorage
   localStorage.removeItem("token");
