@@ -234,16 +234,13 @@ document.getElementById("login-form").addEventListener("submit", async function 
       method: "POST",
       body: JSON.stringify(data),
       headers: {
-        "Content-Type": "application/json",
-
-        // Agrega las cabeceras para sortear CORS
-        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json"
       },
     });
 
     if (response.ok) {
       const userData = await response.json();
-
+      response.headers.forEach((h) => console.log(h));
       console.log(response);
       const authorizationHeader = response.headers.get("Authorization");
       const token = authorizationHeader ? authorizationHeader.split(" ")[1] : null;
