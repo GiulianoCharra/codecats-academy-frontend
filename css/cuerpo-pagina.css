@@ -44,7 +44,7 @@ a {
   height: 100%;
   z-index: -100;
 
-  background-image: url(./assets/images/general/fondo_extra-large.png);
+  background-image: url(../assets/images/general/fondo_extra-large.png);
   background-repeat: no-repeat;
   background-position: center 100px;
   background-size: clamp(300px, calc(40vw + 200px), 900px);
@@ -69,16 +69,16 @@ a {
 
 @media screen and (max-width: 1600px) {
   .pantalla::before {
-    background-image: url(./assets/images/general/fondo_large.png);
+    background-image: url(../assets/images/general/fondo_large.png);
   }
 }
 @media screen and (max-width: 1024px) {
   .pantalla::before {
-    background-image: url(./assets/images/general/fondo_medium.png);
+    background-image: url(../assets/images/general/fondo_medium.png);
   }
 }
 @media screen and (max-width: 767px) {
   .pantalla::before {
-    background-image: url(.assets/images/general/fondo_small.png);
+    background-image: url(../assets/images/general/fondo_small.png);
   }
 }
