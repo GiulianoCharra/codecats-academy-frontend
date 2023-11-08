@@ -9,6 +9,7 @@ const paginas = {
   pago: "pago",
   perfil: "perfil",
   contacto: "contacto",
+  frequentQuestions: "frequentQuestions",
 };
 
 const pages = {
@@ -18,6 +19,7 @@ const pages = {
   pago: "./pages/pago/pago.html",
   contacto: "./pages/contacto/contacto.html",
   perfil: "./pages/perfil/perfil.html",
+  frequentQuestions: "./pages/frequentQuestions/frequentQuestions.html",
 };
 
 const cssPaginaActual = document.getElementById("cssPaginaActual");
@@ -43,7 +45,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 addEventListenerWithCheck(document, "click", async (e) => {
   const link = e.target.closest("a");
-  if (!link) {
+  if (!link || !link.dataset.name) {
     return;
   }
   e.preventDefault();
@@ -329,13 +331,16 @@ async function registerUser() {
   };
 
   try {
-    const response = await fetch("https://codecats-academy-backend.onrender.com/api/auth/register", {
-      method: "POST",
-      body: JSON.stringify(userData),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await fetch(
+      "https://codecats-academy-backend.onrender.com/api/auth/register",
+      {
+        method: "POST",
+        body: JSON.stringify(userData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     if (response.ok) {
       const data = await response.json();
@@ -345,7 +350,6 @@ async function registerUser() {
       document.getElementById("registerModal").style.display = "none";
       document.getElementById("register-form").reset();
       document.getElementById("loginModal").style.display = "block";
-
     } else if (response.status === 400) {
       const errorData = await response.json();
       document.getElementById("error-message-register").textContent = errorData.message;
