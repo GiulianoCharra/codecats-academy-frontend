@@ -103,6 +103,7 @@
 .configuracion {
   width: 100%;
   transition: padding-left 500ms;
+  cursor: pointer;
 }
 
 .configuracion__nombre {

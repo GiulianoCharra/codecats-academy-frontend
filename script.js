@@ -21,10 +21,12 @@ const pages = {
 };
 
 const cssPaginaActual = document.getElementById("cssPaginaActual");
+const jsPaginaActual = document.getElementById("jsPaginaActual");
 let htmlTemplates = new Map();
 const main = document.querySelector("main");
 let paginaActual = "";
 let urlActual = "";
+let isLoggedIn = false;
 
 buscador();
 desplegable();
@@ -47,21 +49,14 @@ addEventListenerWithCheck(document, "click", async (e) => {
   e.preventDefault();
   let name = link.dataset.name;
   let url = pages[name];
-  if (pages[name]) {
-    main.innerHTML = pages[name];
-  }
 
-  if (estaCargado(name)) {
-    cargarPaginaGuardada(htmlTemplates.get(name));
-  } else {
-    cargarPagina(url, name);
-  }
+  cargarPagina(url, name);
 });
 
 window.addEventListener("popstate", (e) => {
   let estado = e.state;
   if (estado.body) {
-    animarCargar(estado.body, estado.urlCss);
+    animarCargar(estado.body, estado.urlCss, estado.urlJs);
   }
 });
 
@@ -78,13 +73,18 @@ function setCss(urlCss) {
   cssPaginaActual.href = urlCss;
 }
 
+async function setJs(urlJs) {
+  let jsInit = await import(urlJs);
+  jsInit.iniciar();
+}
+
 function setHtmlBody(body) {
   main.innerHTML = body;
 }
 
 async function cargarPagina(urlHtml, name) {
   if (estaCargado(name)) {
-    cargarPaginaGuardada(urlHtml);
+    cargarPaginaGuardada(htmlTemplates.get(name));
   } else {
     cargarPaginaCompleta(urlHtml, name);
   }
@@ -94,34 +94,36 @@ async function cargarPagina(urlHtml, name) {
 
 async function cargarPaginaCompleta(urlHtml, name) {
   let urlCss = urlHtml.replace(".html", ".css");
+  let urlJs = urlHtml.replace(".html", ".js");
   let body = await cargarHtml(urlHtml);
-  animarCargar(body, urlCss);
-  agregarState(name, urlHtml, body, urlCss);
+  animarCargar(body, urlCss, urlJs);
+  agregarState(name, urlHtml, body, urlCss, urlJs);
   pushStateHistory(name);
 }
 
 async function cargarPaginaGuardada(datos) {
-  animarCargar(datos.body, datos.urlCss);
+  animarCargar(datos.body, datos.urlCss, datos.urlJs);
   pushStateHistory(datos.name);
 }
 
-async function retrocederPaginaGuardada(body, urlCss) {
-  animarCargar(body, urlCss);
+async function retrocederPaginaGuardada(body, urlCss, urlJs) {
+  animarCargar(body, urlCss, urlJs);
 }
 
-function agregarState(name, urlHtml, body, urlCss) {
-  htmlTemplates.set(name, { name, urlHtml, body, urlCss });
+function agregarState(name, urlHtml, body, urlCss, urlJs) {
+  htmlTemplates.set(name, { name, urlHtml, body, urlCss, urlJs });
 }
 
 function pushStateHistory(name) {
   history.pushState(htmlTemplates.get(name), "", name);
 }
 
-function animarCargar(body, urlCss) {
+function animarCargar(body, urlCss, urlJS) {
   main.classList.add("animacion-salida");
   setTimeout(() => {
     setHtmlBody(body);
     setCss(urlCss);
+    setJs(urlJS);
     verificarEstadoActual();
 
     main.classList.add("animacion-entrada");
@@ -201,14 +203,30 @@ function removeEventListenerWithCheck(elemento, eventName, handler) {
   }
 }
 
-// Mostrar el modal al hacer clic en el enlace
-document.getElementById("openModal").addEventListener("click", function () {
-  document.getElementById("loginModal").style.display = "block";
+const openModalButton = document.getElementById("openModal");
+const loginModal = document.getElementById("loginModal");
+const userMenuModal = document.getElementById("userMenuModal");
+// Mostrar el modal al hacer clic en el enlace (Login o Menú de usuario logueado)
+openModalButton.addEventListener("click", function () {
+  if (isLoggedIn) {
+    // Si el usuario está logueado, cierra el modal si ya está abierto
+    if (userMenuModal.style.display === "block") {
+      userMenuModal.style.display = "none";
+    } else {
+      // Si no está abierto, ábrelo
+      userMenuModal.style.display = "block";
+    }
+  } else {
+    // Si el usuario no está logueado, abre el modal de inicio de sesión
+    loginModal.style.display = "block";
+  }
 });
 
 // Cerrar el modal al hacer clic en el botón de cerrar (x)
 document.getElementById("closeModal").addEventListener("click", function () {
   document.getElementById("loginModal").style.display = "none";
+  // También puedes ocultar el menú de usuario logueado si se muestra
+  document.getElementById("userMenuModal").style.display = "none";
 });
 
 // Cerrar el modal al hacer clic en cualquier área fuera del modal
@@ -217,6 +235,14 @@ window.addEventListener("click", function (event) {
   if (event.target === modal) {
     modal.style.display = "none";
   }
+});
+
+document.getElementById("viewProfile").addEventListener("click", async (e) => {
+  e.preventDefault();
+  const name = "perfil";
+  const url = pages[name];
+
+  cargarPagina(url, name);
 });
 
 document.getElementById("login-form").addEventListener("submit", async function (event) {
@@ -234,20 +260,18 @@ document.getElementById("login-form").addEventListener("submit", async function 
       method: "POST",
       body: JSON.stringify(data),
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
     });
 
     if (response.ok) {
       const userData = await response.json();
-      response.headers.forEach((h) => console.log(h));
-      console.log(response);
       const authorizationHeader = response.headers.get("Authorization");
       const token = authorizationHeader ? authorizationHeader.split(" ")[1] : null;
       console.log(userData.message); // Mensaje de éxito
 
       if (!token) {
-        throw new Error("Token no encontrado en la respuesta");
+        throw new Error("Token not found in response");
       }
 
       localStorage.setItem("token", token);
@@ -256,11 +280,43 @@ document.getElementById("login-form").addEventListener("submit", async function 
         localStorage.setItem("user", JSON.stringify(userData.user));
       }
 
-      window.location.href = "http://localhost:3000/"; // O la URL que desees
+      document.getElementById("loginModal").style.display = "none";
+      document.getElementById("login-form").reset();
+      isLoggedIn = true;
+
+      const button = document.getElementById("openModal");
+      button.innerHTML = `<img class="login__image" src="./assets/images/integrantes/integrante-foto-1.png" alt="User Profile" class="profile-image">`;
     } else {
-      throw new Error("Error en la petición");
+      if (response.status === 401) {
+        document.getElementById("error-message").textContent =
+          "Credentials are not valid. Please try again.";
+      }
     }
   } catch (error) {
     console.log(error);
   }
 });
+
+document.getElementById("logout").addEventListener("click", logout);
+
+function logout() {
+  // Elimina el token del localStorage
+  localStorage.removeItem("token");
+
+  // Restaura la imagen de perfil por defecto
+  openModalButton.innerHTML = `<svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="1em"
+            viewBox="0 0 448 512"
+          >
+            <path
+              d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"
+            />
+          </svg>`;
+
+  // Cierra el modal si está abierto
+  const userMenuModal = document.getElementById("userMenuModal");
+  userMenuModal.style.display = "none";
+  isLoggedIn = false;
+  cargarPaginaGuardada(htmlTemplates.get(paginas.principal));
+}

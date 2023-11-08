@@ -74,6 +74,12 @@
       rel="stylesheet"
       href=""
     />
+    <script
+      defer
+      type="module"
+      id="jsPaginaActual"
+      src=""
+    ></script>
   </head>
   <body class="pantalla">
     <header class="header">
@@ -233,6 +239,10 @@
               class="login-form"
               autocomplete="on"
             >
+              <p
+                id="error-message"
+                class="error-message"
+              ></p>
               <div class="form-input">
                 <label for="email">Email</label>
                 <input
@@ -259,6 +269,27 @@
               </button>
             </form>
             <p>¿No tienes una cuenta? <a href="#">Registrarse</a></p>
+          </div>
+        </div>
+        <!-- Modal de usuario logueado -->
+        <div
+          id="userMenuModal"
+          class="userMenuModal"
+        >
+          <div class="userMenuModal-content">
+            <button
+              data-name="perfil"
+              class="menuModalOption"
+              id="viewProfile"
+            >
+              View Profile
+            </button>
+            <button
+              class="menuModalOption"
+              id="logout"
+            >
+              Logout
+            </button>
           </div>
         </div>
       </nav>
