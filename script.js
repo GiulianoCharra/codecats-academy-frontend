@@ -235,6 +235,9 @@ document.getElementById("login-form").addEventListener("submit", async function 
       body: JSON.stringify(data),
       headers: {
         "Content-Type": "application/json",
+
+        // Agrega las cabeceras para sortear CORS
+        "Access-Control-Allow-Origin": "*",
       },
     });
 
@@ -251,7 +254,6 @@ document.getElementById("login-form").addEventListener("submit", async function 
       }
 
       localStorage.setItem("token", token);
-
 
       if (userData.user) {
         localStorage.setItem("user", JSON.stringify(userData.user));
