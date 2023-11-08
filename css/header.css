@@ -1,3 +1,6 @@
+@import url("./form-input.css");
+@import url("./boton-principal.css");
+
 .header {
   width: 100%;
   height: clamp(80px, calc(5vw + 5px), 150px);
@@ -184,4 +187,63 @@ svg {
     width: 100%;
     opacity: 1;
   }
+}
+
+/* Estilos para el modal login*/
+#openModal {
+  background-color: transparent;
+  border: none;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: var(--color-principal);
+  padding: 20px 40px;
+  border-radius: 5px;
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  top: 50px;
+  left: calc(50% - 250px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+}
+
+.login-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.login-form__title{
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Estilos para el botón de cerrar */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.btn_pricipal {
+  max-width: 200px;
 }

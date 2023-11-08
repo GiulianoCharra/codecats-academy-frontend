@@ -4,7 +4,7 @@
 .imagen_curso {
   width: 500px;
   aspect-ratio: 1;
-  background-image: url(../assets/images/cursos/react.png);
+  background-image: url(../../assets/images/cursos/react.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

@@ -34,7 +34,7 @@
   width: clamp(200px, calc(30vw + 100px), 800px);
   aspect-ratio: 1;
   border-radius: 50%;
-  background-image: url(../assets/images/general/image_principal.png);
+  background-image: url(../../assets/images/general/image_principal.png);
   background-repeat: no-repeat;
   background-size: cover;
   box-shadow: 0px 4px 10px 10px rgba(0, 0, 0, 0.25);
@@ -57,7 +57,7 @@
   width: 500px;
   aspect-ratio: 1;
   border-radius: 50%;
-  background-image: url(../assets/images/general/img-1.png);
+  background-image: url(../../assets/images/general/img-1.png);
   background-repeat: no-repeat;
   background-size: cover;
   filter: drop-shadow(0px 4px 10px 10px rgba(0, 0, 0, 0.25));
@@ -88,7 +88,7 @@
   aspect-ratio: 1;
   flex-shrink: 0;
   border-radius: 200px;
-  background-image: url(../assets/images/equipos/img-team.png);
+  background-image: url(../../assets/images/equipos/img-team.png);
   background-size: cover;
   background-repeat: no-repeat;
   box-shadow: -5px -5px 5px 5px rgba(0, 0, 0, 0.25);
@@ -140,19 +140,19 @@
 
 .equipo:nth-of-type(1) .equipo__imagen {
   border-radius: 100px 100px 100px 0px;
-  background-image: url(../assets/images/equipos/img-team-1.png);
+  background-image: url(../../assets/images/equipos/img-team-1.png);
 }
 
 .equipo:nth-of-type(2) .equipo__imagen {
   width: clamp(200px, calc(5vw + 200px), 400px);
   aspect-ratio: 1;
   border-radius: 50%;
-  background-image: url(../assets/images/equipos/img-team-2.png);
+  background-image: url(../../assets/images/equipos/img-team-2.png);
 }
 
 .equipo:nth-of-type(3) .equipo__imagen {
   border-radius: 100px 100px 0px 100px;
-  background-image: url(../assets/images/equipos/img-team-3.png);
+  background-image: url(../../assets/images/equipos/img-team-3.png);
 }
 
 .contenedor-listado {
@@ -321,19 +321,19 @@
 
 .ambiente:nth-of-type(1) .ambiente__imagen {
   border-radius: 0px 50%;
-  background-image: url(../assets/images/ambiente/ambiente-1.png);
+  background-image: url(../../assets/images/ambiente/ambiente-1.png);
 }
 .ambiente:nth-of-type(2) .ambiente__imagen {
   border-radius: 50% 0px;
-  background-image: url(../assets/images/ambiente/ambiente-2.png);
+  background-image: url(../../assets/images/ambiente/ambiente-2.png);
 }
 .ambiente:nth-of-type(3) .ambiente__imagen {
   border-radius: 0px 50%;
-  background-image: url(../assets/images/ambiente/ambiente-3.png);
+  background-image: url(../../assets/images/ambiente/ambiente-3.png);
 }
 .ambiente:nth-of-type(4) .ambiente__imagen {
   border-radius: 50% 0px;
-  background-image: url(../assets/images/ambiente/ambiente-4.png);
+  background-image: url(../../assets/images/ambiente/ambiente-4.png);
 }
 
 .contenedor__descripcion {

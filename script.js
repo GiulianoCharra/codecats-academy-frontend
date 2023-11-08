@@ -1,7 +1,6 @@
 import { carrusel } from "./js/carrusel.js";
 import { buscador } from "./js/buscador.js";
 import { desplegable } from "./js/desplegable.js";
-import { pages } from "./rutas";
 
 const paginas = {
   principal: "principal",
@@ -10,6 +9,15 @@ const paginas = {
   pago: "pago",
   perfil: "perfil",
   contacto: "contacto",
+};
+
+const pages = {
+  principal: "./pages/principal/principal.html",
+  cursos: "./pages/cursos/cursos.html",
+  curso: "./pages/curso/curso.html",
+  pago: "./pages/pago/pago.html",
+  contacto: "./pages/contacto/contacto.html",
+  perfil: "./pages/perfil/perfil.html",
 };
 
 const cssPaginaActual = document.getElementById("cssPaginaActual");
@@ -24,10 +32,10 @@ desplegable();
 window.addEventListener("DOMContentLoaded", () => {
   paginaActual = location.pathname.split("/");
   paginaActual = paginaActual[paginaActual.length - 1];
-  if (!paginaActual) {
+  if (paginaActual == "index.html" || paginaActual == "") {
     paginaActual = paginas.principal;
   }
-  urlActual = `./pages/${paginaActual}.html`;
+  urlActual = pages[paginaActual];
   cargarPagina(urlActual, paginaActual);
 });
 
@@ -38,16 +46,16 @@ addEventListenerWithCheck(document, "click", async (e) => {
   }
   e.preventDefault();
   let name = link.dataset.name;
-  let url = link.href;
+  let url = pages[name];
   if (pages[name]) {
     main.innerHTML = pages[name];
   }
 
-  /* if (estaCargado(name)) {
+  if (estaCargado(name)) {
     cargarPaginaGuardada(htmlTemplates.get(name));
   } else {
     cargarPagina(url, name);
-  } */
+  }
 });
 
 window.addEventListener("popstate", (e) => {
@@ -74,18 +82,18 @@ function setHtmlBody(body) {
   main.innerHTML = body;
 }
 
-async function cargarPagina(datos) {
-  if (datos) {
-    cargarPaginaGuardada(datos);
+async function cargarPagina(urlHtml, name) {
+  if (estaCargado(name)) {
+    cargarPaginaGuardada(urlHtml);
   } else {
-    cargarPaginaCompleta(datos.urlHtml, datos.name);
+    cargarPaginaCompleta(urlHtml, name);
   }
-  paginaActual = paginas[datos.name];
-  urlActual = urlHtml;
+  paginaActual = paginas[name];
+  urlActual = name;
 }
 
 async function cargarPaginaCompleta(urlHtml, name) {
-  let urlCss = url.replace("pages", "css").replace(".html", ".css");
+  let urlCss = urlHtml.replace(".html", ".css");
   let body = await cargarHtml(urlHtml);
   animarCargar(body, urlCss);
   agregarState(name, urlHtml, body, urlCss);
@@ -134,12 +142,16 @@ function verificarEstadoActual() {
   if (paginaActual == paginas.curso) {
     let desplegables = Array.from(document.getElementsByClassName("desplegable__clases"));
     desplegables.forEach((desplegable) => {
-      addEventListenerWithCheck(desplegable, "click", () => mostrarElementos("mostrar-clases"));
+      addEventListenerWithCheck(desplegable, "click", () =>
+        mostrarElementos(desplegable, "mostrar-clases")
+      );
     });
 
     desplegables = Array.from(document.getElementsByClassName("modulo"));
     desplegables.forEach((desplegable) => {
-      addEventListenerWithCheck(desplegable, "click", () => mostrarElementos("mostrar-datos"));
+      addEventListenerWithCheck(desplegable, "click", () =>
+        mostrarElementos(desplegable, "mostrar-datos")
+      );
     });
   }
   if (paginaActual == paginas.pago) {
@@ -151,6 +163,10 @@ function verificarEstadoActual() {
   }
 }
 
+function mostrarElementos(desplegable, clase) {
+  desplegable.classList.toggle(clase);
+}
+
 function mostrarCalendario(event) {
   let celda = event.target;
   if (!celda.classList.contains("celda-dia")) {
@@ -160,10 +176,6 @@ function mostrarCalendario(event) {
     return;
   }
   celda.classList.toggle("dia-seleccionado");
-}
-
-function mostrarElementos(clase) {
-  desplegable.classList.toggle(clase);
 }
 
 // Función para verificar si un EventListener con nombre está asignado a un elemento
@@ -188,3 +200,68 @@ function removeEventListenerWithCheck(elemento, eventName, handler) {
     elemento.removeEventListener(eventName, handler);
   }
 }
+
+// Mostrar el modal al hacer clic en el enlace
+document.getElementById("openModal").addEventListener("click", function () {
+  document.getElementById("loginModal").style.display = "block";
+});
+
+// Cerrar el modal al hacer clic en el botón de cerrar (x)
+document.getElementById("closeModal").addEventListener("click", function () {
+  document.getElementById("loginModal").style.display = "none";
+});
+
+// Cerrar el modal al hacer clic en cualquier área fuera del modal
+window.addEventListener("click", function (event) {
+  var modal = document.getElementById("loginModal");
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+});
+
+document.getElementById("login-form").addEventListener("submit", async function (event) {
+  event.preventDefault();
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+  let url = "https://codecats-academy-backend.onrender.com/api/auth/login";
+  let data = {
+    email,
+    password,
+  };
+
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (response.ok) {
+      const userData = await response.json();
+
+      console.log(response);
+      const authorizationHeader = response.headers.get("Authorization");
+      const token = authorizationHeader ? authorizationHeader.split(" ")[1] : null;
+      console.log(userData.message); // Mensaje de éxito
+
+      if (!token) {
+        throw new Error("Token no encontrado en la respuesta");
+      }
+
+      localStorage.setItem("token", token);
+
+
+      if (userData.user) {
+        localStorage.setItem("user", JSON.stringify(userData.user));
+      }
+
+      window.location.href = "http://localhost:3000/"; // O la URL que desees
+    } else {
+      throw new Error("Error en la petición");
+    }
+  } catch (error) {
+    console.log(error);
+  }
+});

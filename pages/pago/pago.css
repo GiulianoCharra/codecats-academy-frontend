@@ -62,7 +62,7 @@
 }
 
 .logo_tarjeta {
-  background-image: url(../assets/images/general/logo_tarjeta.png);
+  background-image: url(../../assets/images/general/logo_tarjeta.png);
   background-repeat: no-repeat;
   background-size: 50%;
   background-position: 10% 10%;
@@ -125,7 +125,7 @@
   grid-area: boton;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
   .formulario_datos_tarjeta {
     grid-template:
       "tarjeta" 50px
